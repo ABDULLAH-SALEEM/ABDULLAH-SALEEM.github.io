@@ -1,0 +1,43 @@
+#main {
+    font-family: 'Times New Roman', Times, serif;
+    background-color: rgb(231, 225, 225);
+    margin: 0px;
+}
+
+.mid {
+    text-align: center;
+}
+
+#image {
+    border-radius: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+#sub {
+    background-color: rgb(180, 175, 175);
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    max-width: 100%;
+}
+
+.title {
+    text-align: center;
+    font-size: 2vw;
+}
+
+#last {
+    font-size: 18px;
+}
+
+#inner {
+    font-size: 2vw;
+}
+
+#link {
+    text-align: center;
+}
