@@ -1,0 +1,91 @@
+body{
+    background-color: rgb(198, 202, 202);
+}
+.top{
+    background-color: rgb(255, 255, 255);
+    border-radius: 0.5vw;
+}
+.navbar ul li a{
+    text-decoration: none;
+    font-size: 2vw;
+
+}
+.navbar ul li{
+    display: inline-block;
+}
+.navbar{
+    background-color: rgb(0, 0, 0);
+    border-radius: 0.5vw;
+    border-top-style: none;
+}
+a{
+    color: #fff;
+    padding: 0.5vw;
+}
+.tripple{
+    width:88vw;
+    padding: 0px 0px 0px 0.5vw;
+}
+.single{
+    padding-right:0.5vw;
+}
+ul{
+    display: inline-block;
+}
+*{
+    padding: 0%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.middle-top{
+    background-color: #fff;
+    padding: 0px 5px 5px 5px;
+    border-radius: 0.5vw;
+    
+}
+.middle-bottom{
+    background-color: #fff;
+    padding: 0px 5px 5px 5px;
+    border-radius: 0.5vw;
+}
+.middle-left{
+    width: 71vw;
+}
+img{
+    width: 100%;
+    max-width: 100%;
+}
+p{
+    font-size: 2vw;
+}
+.middle-right{
+    width: 23vw;
+}
+.first{
+    background-color: #fff;
+    padding: 0px 5px 5px 5px;
+    border-radius: 0.5vw;
+}
+.second{
+    background-color: #fff;
+    padding: 0px 5px 5px 5px;
+    border-radius: 0.5vw;
+}
+.third{
+    background-color: #fff;
+    padding: 0px 5px 5px 5px;
+    border-radius: 0.5vw;
+}
+.main{
+    display: flex;
+    justify-content: space-between;
+    border-radius: 0.5vw;
+}
+.foot{
+    background-color: rgb(147, 153, 153);
+    height: 5vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    border-radius: 0.5vw;
+}
