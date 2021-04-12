@@ -55,12 +55,12 @@ body{
 .first-left{
     margin-right: 20px;
 }
-.pra{
+/* .pra{
     border: 2px solid white;
 }
 .assi{
     border: 2px solid white;
-}
+} */
 .assignments{
     display: flex;
     align-content: center;
