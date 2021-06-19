@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styless.css">
+</head>
+
+<body>
+    <h1 style="text-align: center;">AGE CALCULATOR</h1>
+    <div class="container">
+        <form action="/">
+            <div class="days">
+                <label> Date:<span style="color: #f00;">*</span><br>
+                    <input type="number"  required id="date" placeholder="Give Born Date">
+                </label><br><br>
+            </div>
+            <div class="months">
+                <label> Months: <span style="color: #f00;">*</span><br>
+                    <select name="" id="months" required>
+                        <option value="Select Month" disabled selected>Select Month</option>
+                        <option value="january">January</option>
+                        <option value="february">February</option>
+                        <option value="march">March</option>
+                        <option value="april">April</option>
+                        <option value="may">May</option>
+                        <option value="june">June</option>
+                        <option value="july">July</option>
+                        <option value="august">August</option>
+                        <option value="september">September</option>
+                        <option value="october">October</option>
+                        <option value="november">November</option>
+                        <option value="december">December</option>
+                    </select>
+                </label><br><br>
+            </div>
+            <div class="year">
+                <label>Year: <span style="color: #f00;">*</span><br>
+                    <input type="number" maxlength="4"  required id="years" placeholder="Give Born Year"></label>
+                </label><br><br>
+            </div>
+            <div class="submit">
+                <input type="submit" value="submit" onclick="return calculate()" class="butt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="reset" value="Reset" class="butt">
+            </div>
+        </form>
+    </div>
+    <br><br>
+    <div class="output">
+        <div><p id="Youtput"></p><p>Years</p> </div>
+        <div><p id="Moutput"></p><p>Months</p></div>
+        <div><p id="Doutput"></p><p>Days</p></div>
+    </div>
+</body>
+<script src="./index.js"></script>
+
+</html>
