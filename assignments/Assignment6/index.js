@@ -35,7 +35,7 @@ function calculate(){
      }else if(UserBornMonth=='december'){
          UserBornMonth=12;
      }
-     if(UserBornDate>todayDate && UserBornMonth>todayMonth){
+     if(UserBornDate>todayDate && UserBornMonth>todayMonth || UserBornMonth==todayMonth){
          todayMonth-=1;
          todayDate+=31;
          todayYear-=1;
