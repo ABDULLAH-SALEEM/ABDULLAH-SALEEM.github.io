@@ -12,7 +12,7 @@
 <body>
     <h1 style="text-align: center;">AGE CALCULATOR</h1>
     <div class="container">
-        <form action="/">
+        <form action="/" onsubmit="return calculate()">
             <div class="days">
                 <label> Date:<span style="color: #f00;">*</span><br>
                     <input type="number"  required id="date" placeholder="Give Born Date">
@@ -43,16 +43,16 @@
                 </label><br><br>
             </div>
             <div class="submit">
-                <input type="submit" value="submit" onclick="return calculate()" class="butt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="submit" value="Calculate"  class="butt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <input type="reset" value="Reset" class="butt">
             </div>
         </form>
     </div>
     <br><br>
     <div class="output">
-        <div><p id="Youtput"></p><p>Years</p> </div>
-        <div><p id="Moutput"></p><p>Months</p></div>
-        <div><p id="Doutput"></p><p>Days</p></div>
+        <div><p id="Youtput">0</p><p>Years</p> </div>
+        <div><p id="Moutput">0</p><p>Months</p></div>
+        <div><p id="Doutput">0</p><p>Days</p></div>
     </div>
 </body>
 <script src="./index.js"></script>
