@@ -40,6 +40,9 @@ function calculate(){
          todayDate+=31;
          todayYear-=1;
          todayMonth+=12;
+     }else if (UserBornDate<todayDate&&UserBornMonth==todayMonth){
+        UserBornDate;
+        UserBornMonth;
      }else if(UserBornMonth>todayMonth){
          todayMonth+=12;
          todayYear-=1;
