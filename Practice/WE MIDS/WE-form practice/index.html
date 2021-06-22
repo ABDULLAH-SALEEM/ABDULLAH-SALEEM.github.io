@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Bank Account registoration</h1>
+    <form>
+        <label for="name">Name:</label> <br>
+        <input type="text" required id="name" maxlength="20" pattern="[a-zA-z]{1,20}" title="Name should only contains uppercase or lovercase Characters(Only 20 characters in length are allowed)."><br><br>
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" required><br><br>
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" minlength="6" maxlength="10"><br><br>
+        <label for="date">Date:</label><br>
+        <input type="date" id="date"><br><br>
+        <label for="rating">Rating (1-10):</label><br>
+        <input type="range" id="rating" min="0" max="10" onchange="fetch()"><input type="text" id="put" style="border: none;"><br><br>
+        <label for="phonenum">Phone Number</label><br>
+        <input type="tell" pattern="[/d]{4}-[/d]{7}" title="Pattern should be xxxx-xxxxxxx (dash included)" maxlength="12"><br><br>
+        <label for="NIC">NIC:</label><br>
+        <input type="text" id="NIC" pattern="[0-9]{5}-[0-9]{7}-[0-9]{1}" maxlength="15" title="The patteren should be xxxxx-xxxxxxx-x (dash included)"><br><br>
+        <input type="submit" value="Submit" class="but but1">
+        <input type="reset" value="Reset" class="but">
+    </form>
+</body>
+<script>
+    function fetch(){
+        let rating=document.getElementById('rating').value;
+    document.getElementById('put').value=rating;
+
+    }
+</script>
+</html>

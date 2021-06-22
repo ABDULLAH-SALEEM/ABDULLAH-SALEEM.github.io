@@ -1,0 +1,30 @@
+.container1 th{
+    border: none;
+}
+.container2 table{
+    padding: 10px 5px 10px 5px;
+    border-spacing: 10px 10px ;   
+}
+.container2 th{
+    border: none;
+}
+.container3 table{
+    border-collapse: collapse;
+}
+.container3 td{
+    padding: 10px 10px 10px 10px;
+}
+.containr3 th{
+    border: none;
+}
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+*{
+    font-family: sans-serif;
+    font-weight: 600;
+}
+
