@@ -1,0 +1,282 @@
+body{
+    margin: 0%;
+    padding: 0%;
+}
+.top{
+    border:  #3a1f14;
+    background-color: #3a1f14 ;
+}
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0%;
+    padding-bottom: 0%;
+}
+a{
+    text-decoration: none;
+    font-size: 1.5vw;
+    color: #fff;
+}
+a:hover{
+    color: #b67a62 ;
+    text-decoration: underline;
+}
+.components>ul>li{
+    list-style-type: none;
+    display: inline-block;
+    padding-left: 3vw;
+}
+.bookbutton{
+    margin-right: 2vw;
+    font-size: 1.2vw;
+    background-color: #a55333;
+    border: 1px solid #a55333;
+    color: #fff;
+    height: 4vw;
+    width: 9.8vw;
+    border-radius: 0.3vw;
+}
+.logo{
+    margin-left: 2vw;
+    font-size: 3vw;
+    color:#fff;
+    font-weight: 500;
+}
+.image{
+    width: 78%;
+    /* border: 2px solid #3a1f14; */
+}
+.text{
+    width:22%;
+    border: solid 2px #3a1f14;
+}
+.img-text{
+    display: flex;
+}
+.img-1{
+    width: 100%;
+    height: 100%;
+}
+.text{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+   z-index: 4;
+   background-color:#3a1f14 ;
+   
+}
+.main-1{
+    font-size: 6.7vw;
+    margin-left: 47vw;
+    padding-bottom: 0%;
+    margin-bottom: 0%;
+    color: rgb(255, 255, 255);
+    font-weight: 500;
+}
+.sub-1{
+    display: inline-block;
+    font-size: 1.5vw;
+}
+.sub-but{
+    font-size: 1.3vw;
+    margin-top: 0%;
+    padding-top: 0%;
+    height: 4.2vw;
+    background-color: #a55333;
+    border: 1px solid #a55333;
+    width: 9.8vw;
+    color: #fff;
+    border-radius: 0.3vw;
+}
+.mid-1{
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+    font-size: 2.5vw;
+    text-align: center;
+    margin: 8vw 15vw 3vw 15vw;
+    color: #3a1f14;
+    font-weight: 500;
+}
+.mid-2{
+    display: flex;
+    align-items: center;
+    /* flex-wrap: wrap; */
+    justify-content: center;
+    margin: 8vw 15vw 3vw 15vw;
+
+}
+.mid-2-1{
+    /* border: 2px solid black; */
+    /* width: 33.5vw;
+    height: 33.5vw; */
+    margin-right: 1vw;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    width: 40%;
+    /* height: 50%; */
+}
+.mid-2-2{
+    /* border: 2px solid black; */
+    /* width: 33.5vw;
+    height: 33.5vw; */
+    width: 60%;
+    /* height: 60%; */
+}
+.mid-2-1>p{
+    font-size: 2vw;
+    line-height: 3vw;
+    color: #a55333;
+}
+.mid-2-1>span{
+    color: rgb(133, 129, 129);
+    font-size: 1.1vw;
+}
+.mid-2-1>a>button{
+    font-size: 1.3vw;
+    margin-top: 0%;
+    padding-top: 0%;
+    height: 3.5vw;
+    background-color: #a55333;
+    border: 1px solid #a55333;
+    width: 9.8vw;
+    color: #fff;
+    border-radius: 0.3vw;
+}
+.video{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 8vw 15vw 3vw 15vw;
+    flex-direction:column;
+}
+.hotel_video{
+    width: 100%;
+}
+.video>p{
+    color: #a55333;
+    font-size: 4vw;
+}
+.faca{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 8vw 15vw 3vw 15vw;
+}
+.faca-1-img{
+    width: 60%;
+    padding-right: 3vw;
+}
+.faca-1-cont{
+    width: 40%;
+    color:rgb(133, 129, 129);
+    font-size: 1.5vw;
+    line-height: 2vw;
+}
+.faca-1-image{
+    width: 100%;
+}
+.facalities{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 0%;
+    margin: 0%;
+}
+.faca-hed-1{
+    font-size: 5vw;
+    color: #3a1f14;
+    padding-bottom: 0%;
+    margin-bottom: 0%;
+}
+.head-1{
+    color: #a55333;
+    font-size: 2.5vw;
+}
+.foot-1{
+    color: #a55333;
+    font-size: 2.5vw;
+    font-weight: 500;
+}
+.mid4{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.form{
+    width: 40%;
+    /* border: 2px solid; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    padding-right: 3vw;
+    margin-right: 3vw;
+}
+.form>p{
+    font-size: 3vw;
+    color: #a55333;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+#roomType{
+    width: 17.5rem;
+    height: 2rem;
+    color: rgb(133, 129, 129);
+}
+#roomClass{
+    width: 17.5rem;
+    height: 2rem;
+    color: rgb(133, 129, 129);
+}
+#Check-in{
+    width: 17rem;
+    height: 2rem;
+    color:  rgb(133, 129, 129);
+}
+#Check-out{
+    width: 17rem;
+    height: 2rem;
+    color:  rgb(133, 129, 129);
+}
+#c-a{
+    width: 17.5rem;
+    height: 2rem;
+    background-color:#a55333;
+    border: solid 2px #a55333;
+    color: #fff;
+}
+.mid4-1{
+    width: 60%;
+    padding-right: 2vw;
+}
+.mid4{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.left{
+    padding-left: 30px;
+}
+.footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex: 0;
+    background-color: #3a1f14 ;
+}
+.right ul li{
+    display: inline-block;
+    list-style: none;
+    margin: 1vw;
+    /* padding-right: 30px; */
+}
+
+
+
