@@ -33,12 +33,13 @@ a:hover{
         display: flex;
         flex-direction: column;
         justify-content: center;
+        width: 100%;
     }
     .components li{
         align-items: center;
         margin: .5rem;
         font-size: 2vw;
-
+        align-items: center;
     }
     .toggle-button{
         position: absolute;
