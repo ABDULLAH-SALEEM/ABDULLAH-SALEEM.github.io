@@ -29,8 +29,17 @@ a:hover{
     padding-left: 3vw;
 }
 @media screen and (max-width: 768px){
+    .logo span{
+        position: absolute;
+        top: .85rem;
+        left: 1rem;
+        font-size: 1rem;
+    }
+    .components{
+        display: none;
+    }
     .components ul{
-        display: flex;
+        display: none;
         flex-direction: column;
         justify-content: center;
         width: 100%;
@@ -57,11 +66,15 @@ a:hover{
         background-color: white;
         border-radius: 10px;
     }
+
     .navbar{
         flex-direction: column;
         align-items: flex-start;
+        height: 3rem;
     }
-
+    .components.active{
+        display: flex;
+    }
 }
 .bookbutton{
     margin-right: 2vw;
