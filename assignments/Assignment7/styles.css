@@ -48,7 +48,7 @@ body{
     .components li{
         text-align: center;
     }
-    .components:active{
+    .components.active{
         display: flex;
     }
 }
