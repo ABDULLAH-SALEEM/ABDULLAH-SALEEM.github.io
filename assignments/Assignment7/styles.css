@@ -28,7 +28,7 @@ a:hover{
     display: inline-block;
     padding-left: 3vw;
 }
-@media screen and (max-width: 768px){
+@media (max-width: 768px){
     .logo span{
         position: absolute;
         top: .85rem;
@@ -36,19 +36,18 @@ a:hover{
         font-size: 1rem;
     }
     .components{
-        display: none;
+        display:none;
+    }
+    .components.active{
+        display: flex;
     }
     .components ul{
-        display: none;
         flex-direction: column;
         justify-content: center;
-        width: 100%;
     }
     .components li{
-        align-items: center;
         margin: .5rem;
-        font-size: 2vw;
-        align-items: center;
+        font-size: 5vw;
     }
     .toggle-button{
         position: absolute;
@@ -71,9 +70,6 @@ a:hover{
         flex-direction: column;
         align-items: flex-start;
         height: 3rem;
-    }
-    .components.active{
-        display: flex;
     }
 }
 .bookbutton{
