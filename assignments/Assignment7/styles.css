@@ -347,11 +347,12 @@ a:hover{
 }
 .footer{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
-    flex: 0;
+    /* flex: 0; */
     background-color: #3a1f14 ;
     flex-wrap: wrap;
+    margin-bottom:0px; ;
 }
 .right ul li{
     display: inline-block;
