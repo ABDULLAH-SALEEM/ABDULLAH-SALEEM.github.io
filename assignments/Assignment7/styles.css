@@ -38,7 +38,7 @@ a:hover{
 @media (max-width: 768px){
     .logo span{
         position: absolute;
-        top: .50rem;
+        top: .65rem;
         left: 1rem;
         font-size: 1rem;
         z-index: 10;
