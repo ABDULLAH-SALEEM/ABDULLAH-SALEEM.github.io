@@ -42,7 +42,7 @@ a:hover{
     .components{
         flex-direction: column;
         position: fixed;
-        width: 39%;
+        width: 40%;
         z-index: 9;
         height: 50vh;
         background-color: #3a1f14ec;
@@ -52,20 +52,25 @@ a:hover{
         left: -100%;
         transition: all .5s;
     }
+    .components ul li a{
+        font-size: 10px;
+        padding: .2rem;
+        top: 2rem;
+        position: relative;
+        display: block;
+    }
+    .components ul li a:hover,.components ul li a.active{
+        color: #ad8778;
+    }
     #check{
         display: none;
     }
     #check:checked ~ .components{
         left: 0;
     }
-    /* .components.active{
-        display: flex;
-    } */
     .components ul{
-        /* margin: 0%; */
         display: inline-flex;
         flex-direction: column;
-        /* justify-content: center; */
     }
     .components li{
         margin: 0%;
