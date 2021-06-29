@@ -351,6 +351,7 @@ a:hover{
     align-items: center;
     flex: 0;
     background-color: #3a1f14 ;
+    flex-wrap: wrap;
 }
 .right ul li{
     display: inline-block;
