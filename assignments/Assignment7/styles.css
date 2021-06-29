@@ -28,6 +28,9 @@ a:hover{
     display: inline-block;
     padding-left: 3vw;
 }
+#check{
+    display: none;
+}
 @media (max-width: 768px){
     .logo span{
         position: absolute;
@@ -49,8 +52,11 @@ a:hover{
         left: -100%;
         transition: all .5s;
     }
-    .toggle-button:active ~ .components{
-        left: 0%;
+    #check{
+        display: none;
+    }
+    #check:checked ~ .components{
+        left: 0;
     }
     /* .components.active{
         display: flex;
