@@ -34,20 +34,37 @@ a:hover{
         top: .85rem;
         left: 1rem;
         font-size: 1rem;
+        z-index: 10;
     }
     .components{
-        display:none;
-    }
-    .components.active{
-        display: flex;
-    }
-    .components ul{
         flex-direction: column;
-        justify-content: center;
+        position: fixed;
+        width: 39%;
+        z-index: 9;
+        height: 50vh;
+        background-color: #3a1f14ec;
+        border-radius: 5px;
+        padding: 0%;
+        margin: 0%;
+        left: -100%;
+        transition: all .5s;
+    }
+    .toggle-button:active ~ .components{
+        left: 0%;
+    }
+    /* .components.active{
+        display: flex;
+    } */
+    .components ul{
+        /* margin: 0%; */
+        display: inline-flex;
+        flex-direction: column;
+        /* justify-content: center; */
     }
     .components li{
-        margin: .5rem;
-        font-size: 5vw;
+        margin: 0%;
+        padding: 0%;
+        font-size: 2rem;
     }
     .toggle-button{
         position: absolute;
