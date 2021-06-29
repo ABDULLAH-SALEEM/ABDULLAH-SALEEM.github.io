@@ -38,7 +38,7 @@ a:hover{
 @media (max-width: 768px){
     .logo span{
         position: absolute;
-        top: .45rem;
+        top: .50rem;
         left: 1rem;
         font-size: 1rem;
         z-index: 10;
@@ -83,7 +83,7 @@ a:hover{
     }
     .toggle-button{
         position: absolute;
-        top: .35rem;
+        top: .55rem;
         right: 1rem;
         display: flex;
         flex-direction: column;
@@ -101,7 +101,7 @@ a:hover{
     .navbar{
         flex-direction: column;
         align-items: flex-start;
-        height: 2rem;
+        height: 2.5rem;
         position: fixed;
         z-index: 9;
         background-color: #3a1f14;
