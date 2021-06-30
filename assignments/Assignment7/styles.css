@@ -35,7 +35,44 @@ a:hover{
 #check{
     display: none;
 }
+.iframe{
+    display: flex;
+    justify-content: center;
+    
+}
+iframe{
+    width:70%; 
+    height:600px;
+    border:0; 
+    margin-bottom: 10px;
+}
+.homefacalities{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* background-color: #3a1f14; */
+}
+.home{
+    width: 32%;
+    margin: 2rem 2rem 2rem 2rem;
+}
+.himage{
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+}
+.home:hover{
+    transform: scale(1.05);
+    
+
+}
+.homefacalities>p{
+    color: #3a1f14;
+}
 @media (max-width: 768px){
+    iframe{
+        height: 100%;
+    }
     .logo span{
         position: absolute;
         top: .65rem;
