@@ -71,7 +71,7 @@ iframe{
 }
 @media (max-width: 768px){
     iframe{
-        height: 300px;
+        height: 500px;
     }
     .logo span{
         position: absolute;
