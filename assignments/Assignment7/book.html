@@ -1,15 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">
-    <title>Facalities</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">
+    <title>Book Now</title>
 </head>
-
 <body>
     <div class="container">
         <div class="top">
@@ -28,8 +26,8 @@
                     <ul>
                         <li><a href="./index.html">Home</a></li>
                         <li><a href="">Rooms</a></li>
-                        <li><a class="current" href="./facalities.html">Facalities</a></li>
-                        <li> <a href="./book.html"><button class="bookbutton">Book Now</button></a></li>
+                        <li><a href="./facalities.html">Facalities</a></li>
+                        <li><a href="./book.html"><button class="bookbutton">Book Now</button></a></li>
                     </ul>
                 </div>
             </div>
@@ -45,92 +43,44 @@
                         class="img-1"></div>
             </div>
         </div>
-    </div>
-    <div class="facalities">
-        <div class="faca-hed-1" style="padding-top: 2rem;">
-            <p>We Provide</p>
-        </div>
-        <div class=" faca faca-1" style="padding: 0%;margin-top: 0%;">
-            <div class="faca-1-img"><img src="./images/Facalities/faca-1.jpg" alt="" class="faca-1-image"></div>
-            <div class="faca-1-cont">
-                <span class="head-1">Swimming Pool</span>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quos accusamus sint, molestiae
-                    deserunt
-                    alias non nostrum tenetur aliquam. Vel numquam provident molestiae quasi obcaecati quam
-                    maiores tempore
-                    veniam quia!</p>
-                <span class="foot-1">Service Hrs.</span><br>
-                <span class="foot-2">6:00am-8:00pm</span>
+        <div class="mid4">
+            <div class="mid4-1">
+              <p style="font-size: 2rem;color:#a55333;text-align: center;">Book A Room</p>
+              <img src="./images/slider/jorg-angeli-1tyuLfDOnG0-unsplash.jpg" style="width: 100%;" alt="">
             </div>
-        </div>
-        <div class=" faca faca-2">
-
-            <div class="faca-1-cont">
-                <span class="head-1">Bar</span>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quos accusamus sint, molestiae
-                    deserunt
-                    alias non nostrum tenetur aliquam. Vel numquam provident molestiae quasi obcaecati quam
-                    maiores tempore
-                    veniam quia!</p>
-                <span class="foot-1">Service Hrs.</span><br>
-                <span class="foot-2">24 Hrs</span>
+            <div class="mid4-2">
+              <form action="">
+                <label>
+                  
+                  <input type="text" placeholder="Check-In" id="Check-in"
+                          onfocus="(this.type='date')">
+                </label><br><br>
+                <label>
+                  
+                  <input type="text" placeholder="Check-Out" id="Check-out"
+                  onfocus="(this.type='date')">
+                </label><br><br>
+                <label>
+                  <select name="" id="roomType">
+                    <option value="" disabled selected>Select Room Type</option>
+                    <option value="">Single</option>
+                    <option value="">Double</option>
+                    <option value="">Family</option>
+                  </select>
+                </label><br><br>
+                <label>
+                  <select name="" id="roomClass">
+                    <option value="" disabled selected id="R-C">Select Room class</option>
+                    <option value="">Normal</option>
+                    <option value="">Deulux</option>
+                    <option value="">Super Deulux</option>
+                  </select>
+                </label><br><br>
+                <a href=""><button id="c-a">Check Availability</button></a>
+              </form>
             </div>
-            <div class="faca-1-img"><img src="./images/Facalities/faca-2.jpg" alt="" class="faca-1-image"></div>
-        </div>
-        <div class=" faca faca-3">
-            <div class="faca-1-img"><img src="./images/Facalities/faca-3.jpg" alt="" class="faca-1-image"></div>
-            <div class="faca-1-cont">
-                <span class="head-1">Restaurant</span>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quos accusamus sint, molestiae
-                    deserunt
-                    alias non nostrum tenetur aliquam. Vel numquam provident molestiae quasi obcaecati quam
-                    maiores tempore
-                    veniam quia!</p>
-                <span class="foot-1">Service Hrs.</span><br>
-                <span class="foot-2">24 Hrs</span>
-            </div>
-        </div>
-        <div class=" faca faca-4">
-            <div class="faca-1-cont">
-                <span class="head-1">GYM</span>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quos accusamus sint, molestiae
-                    deserunt
-                    alias non nostrum tenetur aliquam. Vel numquam provident molestiae quasi obcaecati quam
-                    maiores tempore
-                    veniam quia!</p>
-                <span class="foot-1">Service Hrs.</span><br>
-                <span class="foot-2">24 Hrs</span>
-            </div>
-            <div class="faca-1-img"><img src="./images/Facalities/faca-4.jpg" alt="" class="faca-1-image"></div>
-        </div>
-        <div class="faca faca-5">
-            <div class="faca-1-img"><img src="./images/Facalities/faca-5.jpg" alt="" class="faca-1-image"></div>
-            <div class="faca-1-cont">
-                <span class="head-1">Pick UP</span>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quos accusamus sint, molestiae
-                    deserunt
-                    alias non nostrum tenetur aliquam. Vel numquam provident molestiae quasi obcaecati quam
-                    maiores tempore
-                    veniam quia!</p>
-                <span class="foot-1">Service Hrs.</span><br>
-                <span class="foot-2">24 Hrs</span>
-            </div>
-        </div>
-        <div class=" faca faca-6">
-            <div class="faca-1-cont">
-                <span class="head-1">SPA</span>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quos accusamus sint, molestiae
-                    deserunt
-                    alias non nostrum tenetur aliquam. Vel numquam provident molestiae quasi obcaecati quam
-                    maiores tempore
-                    veniam quia!</p>
-                <span class="foot-1">Service Hrs.</span><br>
-                <span class="foot-2">7:00am-7:00pm</span>
-            </div>
-            <div class="faca-1-img"><img src="./images/Facalities/faca-6.jpg" alt="" class="faca-1-image"></div>
-        </div>
-    </div>
-    <div class="newsletter"
+          </div>
+        <div class="newsletter"
         style="display:flex;text-align: center;flex-direction: column; background-color:#3a1f14 ; padding: 0%;margin: 0%;border: none;">
         <p style="text-align: center;color: #ffffff;font-weight: 500; font-size: 2vw;">Keep Yourself Updated</p>
         <form action="/">
@@ -162,7 +112,7 @@
             <ul style="text-decoration: none;list-style: none;">
                 <li><a href="./index.html">Home</a></li>
                 <li><a href="">Rooms</a></li>
-                <li><a class="current" href="./facalities.html">Facalities</a></li>
+                <li><a href="./facalities.html">Facalities</a></li>
                 <li> <a href="./book.html"><button class="bookbutton">Book Now</button></a></li>
             </ul>
         </div>
@@ -186,6 +136,6 @@
             Reserved.</p>
     </div>
     </div>
+    </div>
 </body>
-
 </html>

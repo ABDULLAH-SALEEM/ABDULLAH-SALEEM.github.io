@@ -167,6 +167,7 @@ iframe{
     height: 4vw;
     width: 9.8vw;
     border-radius: 0.3vw;
+    cursor: pointer;
 }
 .logo{
     margin-left: 2vw;
