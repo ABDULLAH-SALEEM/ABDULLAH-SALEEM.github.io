@@ -77,6 +77,11 @@ iframe{
 .homefacalities>p{
     color: #3a1f14;
 }
+.components .current{
+    text-decoration: underline;
+    text-decoration-color: #a55333;
+    text-decoration-thickness:  2px;;
+}
 @media (max-width: 768px){
     iframe{
         height: 400px;
