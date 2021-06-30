@@ -2,6 +2,10 @@ body{
     margin: 0%;
     padding: 0%;
 }
+:root{
+    --primary-color:#3a1f14;
+    --secondary-color:
+}
 .top{
     border:  #3a1f14;
     background-color: #3a1f14 ;
@@ -23,7 +27,11 @@ a{
     font-size: 1.5vw;
     color: #fff;
 }
-a:hover{
+/* a:hover{
+    color: #b67a62 ;
+    text-decoration: underline;
+} */
+a:active{
     color: #b67a62 ;
     text-decoration: underline;
 }
@@ -71,7 +79,7 @@ iframe{
 }
 @media (max-width: 768px){
     iframe{
-        height: 500px;
+        height: 400px;
     }
     .logo span{
         position: absolute;
