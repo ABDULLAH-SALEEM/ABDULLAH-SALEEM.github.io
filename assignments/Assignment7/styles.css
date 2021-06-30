@@ -71,7 +71,7 @@ iframe{
 }
 @media (max-width: 768px){
     iframe{
-        height: 100%;
+        height: 300px;
     }
     .logo span{
         position: absolute;
@@ -209,9 +209,6 @@ iframe{
     border-radius: 0.3vw;
 }
 .mid-1{
-    /* display: flex;
-    align-items: center;
-    justify-content: center; */
     font-size: 2.5vw;
     text-align: center;
     margin: 8vw 15vw 3vw 15vw;
