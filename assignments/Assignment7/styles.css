@@ -162,6 +162,10 @@ iframe{
     text-decoration-thickness:  2px;;
 }
 @media (max-width: 768px){
+    .formlayout{
+        background-color:#993c18;
+        border-radius: 10px;
+    }
     .formcover{
         background-color: white;
     }
