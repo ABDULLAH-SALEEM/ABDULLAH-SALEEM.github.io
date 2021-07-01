@@ -172,28 +172,28 @@ iframe{
         position: absolute;
         top: .65rem;
         left: 1rem;
-        font-size: 1rem;
+        font-size: 1.3rem;
         z-index: 10;
     }
     .components{
         flex-direction: column;
         position: fixed;
-        width: 40%;
+        width: 100%;
         z-index: 9;
-        height: 50vh;
-        background-color: #3a1f14ec;
-        border-radius: 5px;
+        height: 100vh;
+        background-color: #3a1f14;
+        /* border-radius: 5px; */
         padding: 0%;
         margin: 0%;
         left: -100%;
         transition: all .5s;
     }
     .components ul li a{
-        font-size: 10px;
+        font-size: 1rem;
         padding: .2rem;
         top: 2rem;
         position: relative;
-        display: block;
+        display: inline-block;
     }
     .components ul li a:hover,.components ul li a.active{
         color: #ad8778;
@@ -222,6 +222,7 @@ iframe{
         justify-content: space-between;
         width: 30px;
         height: 21px;
+        z-index: 10;
     }
     .toggle-button .bar{
         height: 3px;
@@ -238,6 +239,14 @@ iframe{
         z-index: 9;
         background-color: #3a1f14;
         width: 100%;
+    }
+    .components li a button{
+        height: 2rem;
+        width: 4rem;
+        font-size: .6rem;
+        border-radius: 7px;
+        margin-top: 0%;
+        padding-top: 0%;
     }
 }
 .bookbutton{
