@@ -43,8 +43,40 @@
                         class="img-1"></div>
             </div>
         </div>
-            <p style="font-size: 2rem;color:#a55333;text-align: center;margin: 0px;padding: 0px;padding-top: 200px;">Book A Room</p>
-        <div class="mid4">
+            <!-- <p style="font-size: 2rem;color:#a55333;text-align: center;margin: 0px;padding: 0px;padding-top: 200px;">Book A Room</p> -->
+            <div class="formcover">
+                <div class="innercover">
+                    <div class="imagecover">
+                        <img src="./formcover.jfif" alt="" class="imgform">
+                    </div>
+                    <div class="formlayout">
+                        <form action="#">
+                            <p style="text-align: center;">Check for avalaibality</p>
+                            <label for="checkindate">Check-in Date</label><br>
+                            <input type="datetime-local" name="checkindate" id="checkindate"><br><br>
+                            <label for="checkoutdate">Check-out Date</label><br>
+                            <input type="datetime-local" name="checkoutdate" id="checkoutdate"><br><br>
+                            <label for="roomType">Room Type</label><br>
+                                <select name="RoomType" id="roomType">
+                                  <option value="" disabled hidden selected>Select Room Type</option>
+                                  <option value="">Single</option>
+                                  <option value="">Double</option>
+                                  <option value="">Family</option>
+                                </select><br><br>
+                                <label for="roomClass">Room Class</label><br>
+                                    <select name="" id="roomClass">
+                                      <option value="" disabled hidden selected id="R-C">Select Room class</option>
+                                      <option value="">Normal</option>
+                                      <option value="">Deulux</option>
+                                      <option value="">Super Deulux</option>
+                                    </select><br><br>
+                                <label for="avalaibilitybut"></label> 
+                                <input type="button" value="Check Avalaibility"> 
+                        </form>
+                    </div>
+                </div>
+            </div>
+        <!-- <div class="mid4">
               <form action="" style="padding-bottom: 200px;padding-top: 50px;">
                 <label>  
                   <input type="date" placeholder="Check-In" id="Check-in" style="border: 2px solid #a55333; color:#3a1f14;">
@@ -71,7 +103,7 @@
                 </label><br><br>
                 <a href=""><button id="c-a" style="color:#3a1f14;">Check Availability</button></a>
               </form>
-          </div>
+          </div> -->
         <div class="newsletter"
         style="display:flex;text-align: center;flex-direction: column; background-color:#3a1f14 ; padding: 0%;margin: 0%;border: none;">
         <p style="text-align: center;color: #ffffff;font-weight: 500; font-size: 2vw;">Keep Yourself Updated</p>
