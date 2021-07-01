@@ -53,16 +53,47 @@ a:active{
 .imagecover{
     width: 30%;
     height: 500px;
+    
+}
+.imagecover>img{
+    border-top-right-radius: 0%;
+    border-bottom-right-radius: 0%;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+}
+.formlayout form label{
+    color: #fff;
+}
+.formlayout form input{
+    color: #3a1f14;
+    outline: none;
+}
+.formlayout form select{
+    color: #3a1f14;
+    outline: none;
+}
+.formlayout form p{
+    color: #fff;
+    font-size: 2rem;
+    font-weight: 550;
+}
+#avalaibilitybut{
+    height: 2.5rem;
+    width: 20rem;
+    background-color:#3a1f14 ;
+    font-size: 1rem;
+    color: #fff;
+    border: none;
+    cursor: pointer;
 }
 
 .formlayout{
-    background-color: #a55333;
+    background-color: #a55333a4;
     padding: 2rem 2rem 2rem 2rem;
-    border-top-left-radius: 0px;
-    border-bottom-left-radius: 0px;
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
-    border-radius: 10px;
+    border-bottom-left-radius: 0px;
+    border-top-left-radius: 0px;
 }
 
 #checkindate{
@@ -89,7 +120,7 @@ a:active{
 }
 .imgform{
     width: 100%;
-    height: 500px;
+    height: 517px;
 }
 .iframe{
     display: flex;
