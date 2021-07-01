@@ -163,7 +163,7 @@ iframe{
 }
 @media (max-width: 768px){
     .formlayout form p{
-        font-size: 1.8rem;
+        font-size: 1.6rem;
     }
     .formlayout{
         background-color:#a55333;
