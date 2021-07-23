@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .head {
+        background-color: aqua;
+        text-align: center;
+    }
+
+    form>input {
+        width: 100%;
+    }
+
+    @media (min-width:992px) {
+        .maincontainer {
+            position: relative;
+            background-color: beige;
+        }
+
+        .container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,100%);
+            background-color: beige;
+        }
+        form>input {
+        width: 95%;
+    }
+
+    }
+</style>
+
+<body>
+    <div class="maincontainer">
+        <div class="container">
+            <div class="head">Student login</div>
+            <form action="/">
+                <label for="email">email</label><br>
+                <input type="text" id="email"><br><br>
+                <label for="email">email</label><br>
+                <input type="text" id="email"><br><br>
+                <input type="submit" value="submit">
+            </form>
+        </div>
+
+    </div>
+</body>
+
+</html>
