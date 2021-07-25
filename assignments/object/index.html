@@ -1,42 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
+    <p>Question no 2</p>
     <form action="/" onsubmit="return checkProperty()">
         <label for="property">Check For Property</label>
         <input type="text" id='property'>
         <input type="submit">
     </form>
     <p id="propertyoutput"></p>
+    <p>Question no 4</p>
     <form action="/" onsubmit="return onSubmitt()">
         <label for="name">Name</label><br>
-        <input type="text" id="name"><br><br>
-        <!-- <label for="gender">Gender</label>
-        <input type="radio" id="male"  value="male" >
-        <label for="male">Male</label>
-        <input type="radio" id="female"  value="female" >
-        <label for="female">female</label><br><br> -->
+        <input type="text" id="iname"><br><br>
+        Gender: <br>
+        <input type="radio" name="igender" value="Male">Male
+        <input type="radio" name="igender" value="Female">Female
+        <input type="radio" name="igender" value="Others">Others <br><br>
         <label for="address">Address</label><br>
-        <input type="text" name="address" id="address"><br><br>
-        <select name="education" id="education">Education
+        <input type="text" name="address" id="iaddress"><br><br>
+        <label for="education">Education</label><br>
+        <select name="education" id="ieducation">
             <option value="Matric">Matric</option>
             <option value="Inter">Inter</option>
             <option value="No_education">no Education</option>
         </select><br><br>
-        <select name="profession" id="profession">Profession
+        <label for="profession">Profession</label><br>
+        <select name="profession" id="iprofession">Profession
             <option value="govtJob">Govt Job</option>
             <option value="pvtJob">Pvt Job</option>
             <option value="NoJob">No Job</option>
         </select><br><br>
         <input type="submit" value="submit">
     </form>
-    
-    
+    <p id="nameInfo"></p>
+    <p id="addressInfo"></p>
+    <p id="educationInfo"></p>
+    <p id="professionInfo"></p>
+
+
 </body>
 <script src="index.js"></script>
+
 </html>
