@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="show">
+        <input type="button" value="Strat Quiz" id="startQuiz" onclick="start()">
+        <p id="result"></p>
+        <p id="status"></p>
+        <input type="button" value="Try Again" id="tryAgain" onclick="window.location.reload();">
+        <div id="mcqsArea">
+            <p id="question" multiple></p>
+            <input type="radio" name="answer" value="optionA" id="optionA"> <span id="optA"></span><br>
+            <input type="radio" name="answer" value="optionB" id="optionB"><span id="optB"></span><br>
+            <input type="radio" name="answer" value="optionC" id="optionC"><span id="optC"></span><br>
+            <input type="button" value="NexT" onclick="nextFunc()">
+        </div>
+    </div>
+</body>
+<script src="app.js"></script>
+
+</html>

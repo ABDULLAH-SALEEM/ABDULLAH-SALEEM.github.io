@@ -1,0 +1,56 @@
+*{
+    border-radius: 3px;
+}
+body,
+html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: black;
+}
+#mcqsArea{
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(196, 184, 184);
+    padding: 10px 10px 10px 10px;
+}
+.show {
+    position: relative;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+#startQuiz,#result{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(196, 184, 184);
+    padding: 10px 10px 10px 10px;
+}
+#tryAgain{
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(196, 184, 184);
+    padding: 10px 10px 10px 10px;
+    display: none;
+}
+#status{
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(196, 184, 184);
+    padding: 10px 10px 10px 10px;
+    display: none;
+}
+#result{
+    display: none;
+}
