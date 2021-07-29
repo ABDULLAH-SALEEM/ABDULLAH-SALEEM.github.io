@@ -59,6 +59,7 @@ var nextFunc = function next() {
                 if (correctAnswer[i].value === mcQs[questionCount - 1].answer) {
                     score++;
                 }
+                correctAnswer[i].checked=false;
             }
         }
         questionCount++;
