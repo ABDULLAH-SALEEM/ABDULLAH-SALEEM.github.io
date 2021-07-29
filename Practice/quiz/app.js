@@ -33,8 +33,42 @@ let mcQs = [
         optionB: 9,
         optionC: 16,
         answer: 'optionC'
+    },
+    {
+        question: 'Q6: What is squareRoot(2)?',
+        optionA: 2,
+        optionB: 1.41,
+        optionC: 3.00,
+        answer: 'optionB'
+    },
+    {
+        question: 'Q7: What is log(2)?',
+        optionA: 0.3,
+        optionB: 1,
+        optionC: 7,
+        answer: 'optionA'
+    },
+    {
+        question: 'Q8: What is sin(2)?',
+        optionA: 5,
+        optionB: 0.03,
+        optionC: 16,
+        answer: 'optionB'
+    },
+    {
+        question: 'Q9: What is cos(2)?',
+        optionA: 0.99,
+        optionB: 0.03,
+        optionC: 16,
+        answer: 'optionA'
+    },
+    {
+        question: 'Q10: What is tan(2)?',
+        optionA: 11,
+        optionB: 0.03,
+        optionC: 16,
+        answer: 'optionB'
     }
-
 ]
 var score = 0;
 var questionCount = 0;
@@ -49,7 +83,7 @@ function start() {
 }
 var nextFunc = function next() {
     var correctAnswer = document.getElementsByName('answer');
-    if (questionCount < 5) {
+    if (questionCount < 10) {
         document.getElementById('question').innerHTML = mcQs[questionCount]['question'];
         document.getElementById('optA').innerHTML = mcQs[questionCount]['optionA'];
         document.getElementById('optB').innerHTML = mcQs[questionCount]['optionB'];
