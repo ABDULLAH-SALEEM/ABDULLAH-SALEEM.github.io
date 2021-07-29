@@ -73,6 +73,18 @@ let mcQs = [
 var score = 0;
 var questionCount = 0;
 function start() {
+    document.getElementById('timer').style.display='block';
+    const startingMinutes=10;
+    let time=startingMinutes*60;
+    const countdownEl=document.getElementById('timer');
+    setInterval(updateCountdown,1000);
+    function updateCountdown(){
+        const minutes=Math.floor(time/60);
+        let seconds=time%60;
+        seconds=seconds<10?'0'+seconds:seconds;
+        countdownEl.innerHTML='Time Remaining: '+`${minutes}:${seconds}`;
+        time--;
+    }
     document.getElementById('startQuiz').style.display = 'none';
     document.getElementById('mcqsArea').style.display = 'block';
     document.getElementById('question').innerHTML = mcQs[questionCount]['question'];
