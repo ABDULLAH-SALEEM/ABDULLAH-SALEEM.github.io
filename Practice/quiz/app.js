@@ -117,6 +117,7 @@ var nextFunc = function next() {
                 }
             }
         }
+        document.getElementById('timer').style.display='none';
         document.getElementById('result').style.display = 'block';
         document.getElementById('result').innerHTML = "Quiz done <br> Total No Of Questions:" + ' ' + questionCount + '<br>' + 'Total Corrected Answers: ' + score + '<br>' + '<br>' + 'You Scored : ' + score + '<br>' + "Your Percentage is: " + (score / questionCount) * 100 + '%';
         document.getElementById('mcqsArea').style.display = 'none';
