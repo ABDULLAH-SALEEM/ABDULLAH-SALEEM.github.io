@@ -96,6 +96,11 @@ function start() {
 var nextFunc = function next() {
     var correctAnswer = document.getElementsByName('answer');
     if (questionCount < 10) {
+        // if(correctAnswer[i].checked==true){
+        //     document.getElementById('next').disabled='false';
+        // }else if (!correctAnswer[i].checked==false){
+        //     document.getElementById('next').disabled='true';
+        // }
         document.getElementById('question').innerHTML = mcQs[questionCount]['question'];
         document.getElementById('optA').innerHTML = mcQs[questionCount]['optionA'];
         document.getElementById('optB').innerHTML = mcQs[questionCount]['optionB'];

@@ -6,7 +6,8 @@
     transform: translate(-50%, -50%);
     background-color: rgb(196, 184, 184);
     padding: 10px 10px 10px 10px;
-    width:50%;
+    width:70%;
+    text-align: center;
 }
 *{
     border-radius: 3px;
@@ -28,7 +29,7 @@ body{
     transform: translate(-50%, -50%);
     background-color: rgb(196, 184, 184);
     padding: 10px 10px 10px 10px;
-    width:50%;
+    width:70%;
 }
 .show {
     position: relative;
@@ -43,6 +44,7 @@ body{
     transform: translate(-50%, -50%);
     background-color: rgb(196, 184, 184);
     padding: 10px 10px 10px 10px;
+    width:70%;
 }
 #tryAgain{
     position: absolute;
@@ -52,6 +54,7 @@ body{
     background-color: rgb(196, 184, 184);
     padding: 10px 10px 10px 10px;
     display: none;
+    width:70%;
 }
 #status{
     position: absolute;
@@ -61,6 +64,7 @@ body{
     background-color: rgb(196, 184, 184);
     padding: 10px 10px 10px 10px;
     display: none;
+    width:70%;
 }
 #result{
     display: none;
