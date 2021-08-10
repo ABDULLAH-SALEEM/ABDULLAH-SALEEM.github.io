@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">
     <title>Book Now</title>
 </head>
+<script src="./app.js"></script>
 <body>
     <div class="container">
         <div class="top">
@@ -44,6 +45,27 @@
             </div>
         </div>
             <!-- <p style="font-size: 2rem;color:#a55333;text-align: center;margin: 0px;padding: 0px;padding-top: 200px;">Book A Room</p> -->
+            <div class="filter" >
+                <form  onsubmit="return checkForm()">
+                    <select name="category" id="category" >
+                        <option value="cat" hidden disabled>Select Your Category</option>
+                        <option value="single_room">Single Room</option>
+                        <option value="double_room">Double Room</option>
+                        <option value="family_room">Family Room</option>
+                    </select>
+                    <select name="class" id="class">
+                        <option value="Business_Class">Business Class</option>
+                        <option value="First_Class">First Class</option>
+                    </select>
+                    <input type="submit" value="search">
+
+                </form>
+            </div>
+            <div class="catresult">
+                <div class="sin"></div>
+                <div class="dou"></div>
+                <div class="fam"></div>
+            </div>
             <div class="formcover" id="formcover">
                 <div class="innercover">
                     <div class="imagecover">
