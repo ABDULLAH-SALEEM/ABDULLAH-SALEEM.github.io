@@ -180,7 +180,24 @@ iframe{
     text-decoration: none;
 }
 #search{
-    background-color: #7f4028
+    background-color: #7f4028;
+}
+#filter_table{
+    width: 100%;
+    color: #fff;
+}
+.filterResult{
+    /* border: solid 1px ; */
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    background-color:#3a1f14;
+    outline: none;
+    padding: 2rem 2rem 2rem 2rem;
+    margin: 6rem 6rem 6rem 6rem;
+    border-radius: 10px;
+    display: none;
 }
 @media (max-width: 768px){
     .filter{
