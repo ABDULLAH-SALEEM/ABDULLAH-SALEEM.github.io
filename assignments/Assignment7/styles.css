@@ -86,6 +86,17 @@ a:active{
     border: none;
     cursor: pointer;
 }
+.filter{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    background-color:#3a1f14;
+    outline: none;
+    padding: 2rem 2rem 2rem 2rem;
+    margin: 6rem 6rem 6rem 6rem;
+    border-radius: 10px;
+}
 
 .formlayout{
     background-color: #a55333a4;
@@ -168,9 +179,25 @@ iframe{
     font-weight: 500;
     text-decoration: none;
 }
+#search{
+    background-color: #7f4028
+}
 @media (max-width: 768px){
+    .filter{
+        background-color: #fff;
+    }
+    #filter_form{
+        background-color: #7f4028;
+        padding: 2rem 2rem 2rem 2rem;
+    }
+    #category,#class{
+        margin-bottom: 2rem;
+    }
     .formlayout form p{
         font-size: 1.6rem;
+    }
+    #search{
+        background-color: #3a1f14;
     }
     .formlayout{
         background-color:#a55333;

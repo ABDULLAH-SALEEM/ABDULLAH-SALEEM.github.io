@@ -45,19 +45,19 @@
             </div>
         </div>
             <!-- <p style="font-size: 2rem;color:#a55333;text-align: center;margin: 0px;padding: 0px;padding-top: 200px;">Book A Room</p> -->
-            <div class="filter" >
-                <form  onsubmit="return checkForm()">
-                    <select name="category" id="category" >
+            <div class="filter">
+                <form  onsubmit="return checkForm()" id="filter_form">
+                    <select name="category" id="category" style="height: 2.5rem;width: 19.7rem;border: none;outline: none;" >
                         <option value="cat" hidden disabled>Select Your Category</option>
                         <option value="single_room">Single Room</option>
                         <option value="double_room">Double Room</option>
                         <option value="family_room">Family Room</option>
                     </select>
-                    <select name="class" id="class">
+                    <select name="class" id="class" style="height: 2.5rem;width: 19.7rem;border: none;outline: none;">
                         <option value="Business_Class">Business Class</option>
                         <option value="First_Class">First Class</option>
                     </select>
-                    <input type="submit" value="search">
+                    <input type="submit" id="search" value="Search" style="height: 2.5rem;width: 19.7rem;border: none;outline: none; color: #fff;font-weight: 550;">
 
                 </form>
             </div>
