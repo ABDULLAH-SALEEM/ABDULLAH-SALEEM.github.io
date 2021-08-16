@@ -128,6 +128,7 @@ a:active{
     margin: 6rem 6rem 6rem 6rem;
     padding: 3rem 3rem 3rem 3rem;
     border-radius: 10px; 
+    display: none;
 }
 .imgform{
     width: 100%;
@@ -182,6 +183,16 @@ iframe{
 #search{
     background-color: #7f4028;
 }
+#bn{
+    background-color: #7f4028;
+    height: 2.4rem;
+    width: 20rem;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: #fff;
+    font-weight: 550;
+}
 #filter_table{
     width: 100%;
     color: #fff;
@@ -200,12 +211,29 @@ iframe{
     display: none;
 }
 @media (max-width: 768px){
+    .filterResult{
+        display: none;
+        background-color: #fff;
+        padding: 0%;
+        margin: 0%;
+    }
+    #filter_table{
+        font-size: smaller;  
+        color: #3a1f14;;
+        border: 1px solid #7f4028;
+    }
+    #bn{
+        height: 2.4rem;
+        width: 6rem;
+        margin-top: 10px;
+    }
     .filter{
         background-color: #fff;
+        margin: 0%;
     }
     #filter_form{
         background-color: #7f4028;
-        padding: 2rem 2rem 2rem 2rem;
+        padding: 1rem 1rem 1rem 1rem;
     }
     #category,#class{
         margin-bottom: 2rem;
@@ -219,9 +247,12 @@ iframe{
     .formlayout{
         background-color:#a55333;
         border-radius: 10px;
+        padding: 1rem 1rem 1rem 1rem;
+        margin: 0%;
     }
     .formcover{
         background-color: white;
+        margin: 0%;
     }
     iframe{
         height: 400px;

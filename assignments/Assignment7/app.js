@@ -1,7 +1,7 @@
 let rooms = {
     single_room: {
         First_Class: {
-            Room_Type: 'single',
+            Room_Type: 'Single',
             Room_Class: 'First Class',
             Avalaibility: 10,
             Capicity: '1 adult',
@@ -40,7 +40,7 @@ let rooms = {
             Price: 3000,
         },
         Business_Class: {
-            Room_Type: 'Single',
+            Room_Type: 'Family',
             Room_Class: 'Business Class',
             Avalaibility: 4,
             Capicity: '2 adult, 4 Kid',
@@ -83,4 +83,9 @@ function checkForm() {
     filterDiv.style.display='block';
     myTable.innerHTML=tableRow;
     return false;
+}
+const bn=document.getElementById('bn');
+const formCover=document.getElementById('formcover');
+function onClick(){
+    formCover.style.display='block';
 }
