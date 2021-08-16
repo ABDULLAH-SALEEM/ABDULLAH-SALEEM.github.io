@@ -111,18 +111,24 @@ a:active{
     height: 2.5rem;
     width: 19.7rem;
 }
+#name,#CNIC,#noOfDays,#roomType,#roomClass{
+    height: 2.5rem;
+    width: 19.7rem;
+    color: #3a1f14;
+    outline: none;
+}
 #checkoutdate{
     height: 2.4rem;
     width: 19.7rem;
 }
-#roomType{
+/* #roomType{
     height: 2.4rem;
-    width: 20rem;
+    width: 19.7rem;
 }
 #roomClass{
     height: 2.5rem;
     width: 20rem;
-}
+} */
 .formcover{
     background-color:#3a1f14 ;
     margin: 6rem 6rem 6rem 6rem;
@@ -132,7 +138,7 @@ a:active{
 }
 .imgform{
     width: 100%;
-    height: 513.5px;
+    height: 773px;
 }
 .iframe{
     display: flex;
@@ -211,6 +217,9 @@ iframe{
     display: none;
 }
 @media (max-width: 768px){
+    .imagecover{
+        display: none;
+    }
     .filterResult{
         display: none;
         background-color: #fff;

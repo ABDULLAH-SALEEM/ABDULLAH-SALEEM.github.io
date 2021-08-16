@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">
     <title>Book Now</title>
 </head>
+
 <body>
     <div class="container">
         <div class="top">
@@ -27,7 +29,8 @@
                         <li><a href="./index.html">Home</a></li>
                         <li><a href="">Rooms</a></li>
                         <li><a href="./facalities.html">Facalities</a></li>
-                        <li><a href="./book.html#filter_form"><button class=" currentButton bookbutton">Book Now</button></a></li>
+                        <li><a href="./book.html#filter_form"><button class=" currentButton bookbutton">Book
+                                    Now</button></a></li>
                     </ul>
                 </div>
             </div>
@@ -43,70 +46,70 @@
                         class="img-1"></div>
             </div>
         </div>
-            <!-- <p style="font-size: 2rem;color:#a55333;text-align: center;margin: 0px;padding: 0px;padding-top: 200px;">Book A Room</p> -->
-            <div class="filter">
-                <form  onsubmit="return checkForm()" id="filter_form">
-                    <select required name="category" id="category" style="height: 2.5rem;width: 19.7rem;border: none;outline: none;" >
-                        <option value="cat" selected hidden disabled>Select Room Category</option>
-                        <option value="single_room">Single Room</option>
-                        <option value="double_room">Double Room</option>
-                        <option value="family_room">Family Room</option>
-                    </select>
-                    <select required name="class" id="class" style="height: 2.5rem;width: 19.7rem;border: none;outline: none;">
-                        <option value="cla" selected disabled hidden>Select Room Class</option>
-                        <option value="Business_Class">Business Class</option>
-                        <option value="First_Class">First Class</option>
-                    </select>
-                    <input type="submit" id="search" value="Search" style="height: 2.5rem;width: 19.7rem;border: none;outline: none; color: #fff;font-weight: 550;"><br>
-                    <span id="error" ></span> 
-                </form>
-            </div>
-            <div class="filterResult">
-                <table  id="filter_table">
-                    <tr>
-                        <th>ROOM TYPE</th>
-                        <th>ROOM CLASS</th>
-                        <th>AVALAIBILITY</th>
-                        <th>CAPACITY</th>
-                        <th>PRICE</th>
-                    </tr>
-                    <tbody id="myTable" >
-                    </tbody>
-                </table>
-                <button id="bn" onclick="onClick()" >Book Now</button>
-            </div>
-            <div class="formcover" id="formcover">
-                <div class="innercover">
-                    <div class="imagecover">
-                        <img src="./formcover.jfif" alt="" class="imgform">
-                    </div>
-                    <div class="formlayout">
-                        <form action="#">
-                            <p style="text-align: center;">Check For Avalaibality</p>
-                            <label for="checkindate">Check-in Date</label><br>
-                            <input type="datetime-local" name="checkindate" id="checkindate"><br><br>
-                            <label for="checkoutdate">Check-out Date</label><br>
-                            <input type="datetime-local" name="checkoutdate" id="checkoutdate"><br><br>
-                            <label for="roomType">Room Type</label><br>
-                                <select name="RoomType" id="roomType">
-                                  <option value="" disabled hidden selected>Select Room Type</option>
-                                  <option value="">Single</option>
-                                  <option value="">Double</option>
-                                  <option value="">Family</option>
-                                </select><br><br>
-                                <label for="roomClass">Room Class</label><br>
-                                    <select name="" id="roomClass">
-                                      <option value="" disabled hidden selected id="R-C">Select Room class</option>
-                                      <option value="">Normal</option>
-                                      <option value="">Deulux</option>
-                                      <option value="">Super Deulux</option>
-                                    </select><br><br>
-                                <label for="avalaibilitybut"></label> 
-                                <input type="button" value="Check Avalaibility" id="avalaibilitybut"> 
-                        </form>
-                    </div>
+        <!-- <p style="font-size: 2rem;color:#a55333;text-align: center;margin: 0px;padding: 0px;padding-top: 200px;">Book A Room</p> -->
+        <div class="filter">
+            <form onsubmit="return checkForm()" id="filter_form">
+                <select required name="category" id="category"
+                    style="height: 2.5rem;width: 19.7rem;border: none;outline: none;">
+                    <option value="cat" selected hidden disabled>Select Room Category</option>
+                    <option value="single_room">Single Room</option>
+                    <option value="double_room">Double Room</option>
+                    <option value="family_room">Family Room</option>
+                </select>
+                <select required name="class" id="class"
+                    style="height: 2.5rem;width: 19.7rem;border: none;outline: none;">
+                    <option value="cla" selected disabled hidden>Select Room Class</option>
+                    <option value="Business_Class">Business Class</option>
+                    <option value="First_Class">First Class</option>
+                </select>
+                <input type="submit" id="search" value="Search"
+                    style="height: 2.5rem;width: 19.7rem;border: none;outline: none; color: #fff;font-weight: 550;"><br>
+                <span id="error"></span>
+            </form>
+        </div>
+        <div class="filterResult">
+            <table id="filter_table">
+                <tr>
+                    <th>ROOM TYPE</th>
+                    <th>ROOM CLASS</th>
+                    <th>AVALAIBILITY</th>
+                    <th>CAPACITY</th>
+                    <th>PRICE</th>
+                </tr>
+                <tbody id="myTable">
+                </tbody>
+            </table>
+            <button id="bn" onclick="onClick()">Confirm</button>
+        </div>
+        <div class="formcover" id="formcover">
+            <div class="innercover">
+                <div class="imagecover">
+                    <img src="./formcover.jfif" alt="" class="imgform">
+                </div>
+                <div class="formlayout">
+                    <form action="#">
+                        <p style="text-align: center;">Book Your Room</p>
+                        <label for="name">Name</label><br>
+                        <input type="text" placeholder="Give Your Name" name="name" id="name" required><br><br>
+                        <label for="CNIC">CNIC</label><br>
+                        <input type="text" required placeholder="xxxxx-xxxxxxx-x" name="CNIC" id="CNIC" pattern="[0-9]{5}-[0-9]{7}-[0-9]{1}" maxlength="15"
+                            title="The patteren should be xxxxx-xxxxxxx-x (dash included)"><br><br>
+                        <label for="checkindate">Check-in Date</label><br>
+                        <input type="datetime-local" required name="checkindate" id="checkindate"><br><br>
+                        <label for="checkoutdate">Check-out Date</label><br>
+                        <input type="datetime-local" required name="checkoutdate" id="checkoutdate"><br><br>
+                        <label for="noOfDays">No Of Days</label><br>
+                        <input type="number" required placeholder="No Of Days" name="noOfDays" id="noOfDays"><br><br>
+                        <label for="roomType">Room Type</label><br>
+                        <input type="text" name="RoomType" id="roomType" required placeholder="Give Room Type"><br><br>
+                        <label for="roomClass">Room Class</label><br>
+                        <input name="roomClass" type="text" placeholder="Give Room Class" id="roomClass"><br><br>
+                        <label for="avalaibilitybut"></label>
+                        <input type="submit" value="Book Now" id="avalaibilitybut">
+                    </form>
                 </div>
             </div>
+        </div>
         <!-- <div class="mid4">
               <form action="" style="padding-bottom: 200px;padding-top: 50px;">
                 <label>  
@@ -136,62 +139,63 @@
               </form>
           </div> -->
         <div class="newsletter"
-        style="display:flex;text-align: center;flex-direction: column; background-color:#3a1f14 ; padding: 0%;margin: 0%;border: none;">
-        <p style="text-align: center;color: #ffffff;font-weight: 500; font-size: 2vw;">Keep Yourself Updated</p>
-        <form action="/">
-            <label for="email"></label>
-            <input type="email" name="email" id="email" placeholder="Subscribe To Our Newsletter"
-                style="width: 60%;height: 3vw;outline: none;border: none; font-size: 1.5vw;"><br>
-            <input type="button" value="Subscribe"
-                style="font-size: 2vw; background-color: #a55333; border: 1px solid #a55333; color: #fff; height: 4vw; width: 60.5%; border-radius: 0.3vw; margin-top: 9px;">
-        </form>
-    </div>
-    <div class="footer" id="foot">
-        <div class="left" style="padding: 0%;margin: 0%; border: none;">
-            <p style="color: white;font-size: 2.5vw;">Contact us</p>
-            <p style="color: white; font-size: 1.5vw;"><a href="contact@welcomemat.com" target="_blank"
-                    style="text-decoration: none;"><i class="bi bi-envelope-fill"
-                        onmouseover="this.style.color='#FBBC05'"
-                        onmouseout="this.style.color=' #fff'"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-                        onmouseover="this.style.color='#FBBC05'"
-                        onmouseout="this.style.color=' #fff'">contact@welcomemat.com</span></a></p>
-            <p style="color: white;font-size: 1.5vw;"><a href="tel: +62 21 123 4321" target="_blank"
-                    style="text-decoration: none;"><i class="bi bi-telephone-fill"
-                        onmouseover="this.style.color='#34A853'"
-                        onmouseout="this.style.color=' #fff'"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-                        onmouseover="this.style.color='#34A853'" onmouseout="this.style.color=' #fff'">+62 21 123
-                        4321</span></a>
-            </p>
+            style="display:flex;text-align: center;flex-direction: column; background-color:#3a1f14 ; padding: 0%;margin: 0%;border: none;">
+            <p style="text-align: center;color: #ffffff;font-weight: 500; font-size: 2vw;">Keep Yourself Updated</p>
+            <form action="/">
+                <label for="email"></label>
+                <input type="email" name="email" id="email" placeholder="Subscribe To Our Newsletter"
+                    style="width: 60%;height: 3vw;outline: none;border: none; font-size: 1.5vw;"><br>
+                <input type="button" value="Subscribe"
+                    style="font-size: 2vw; background-color: #a55333; border: 1px solid #a55333; color: #fff; height: 4vw; width: 60.5%; border-radius: 0.3vw; margin-top: 9px;">
+            </form>
         </div>
-        <div class="mid">
-            <ul style="text-decoration: none;list-style: none;">
-                <li><a href="./index.html">Home</a></li>
-                <li><a href="">Rooms</a></li>
-                <li><a href="./facalities.html">Facalities</a></li>
-                <li> <a href="./book.html#filter_form"><button class="bookbutton">Book Now</button></a></li>
-            </ul>
+        <div class="footer" id="foot">
+            <div class="left" style="padding: 0%;margin: 0%; border: none;">
+                <p style="color: white;font-size: 2.5vw;">Contact us</p>
+                <p style="color: white; font-size: 1.5vw;"><a href="contact@welcomemat.com" target="_blank"
+                        style="text-decoration: none;"><i class="bi bi-envelope-fill"
+                            onmouseover="this.style.color='#FBBC05'"
+                            onmouseout="this.style.color=' #fff'"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                            onmouseover="this.style.color='#FBBC05'"
+                            onmouseout="this.style.color=' #fff'">contact@welcomemat.com</span></a></p>
+                <p style="color: white;font-size: 1.5vw;"><a href="tel: +62 21 123 4321" target="_blank"
+                        style="text-decoration: none;"><i class="bi bi-telephone-fill"
+                            onmouseover="this.style.color='#34A853'"
+                            onmouseout="this.style.color=' #fff'"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                            onmouseover="this.style.color='#34A853'" onmouseout="this.style.color=' #fff'">+62 21 123
+                            4321</span></a>
+                </p>
+            </div>
+            <div class="mid">
+                <ul style="text-decoration: none;list-style: none;">
+                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="">Rooms</a></li>
+                    <li><a href="./facalities.html">Facalities</a></li>
+                    <li> <a href="./book.html#filter_form"><button class="bookbutton">Book Now</button></a></li>
+                </ul>
+            </div>
+            <div class="right" style="padding: 0%;margin: 0%;">
+                <ul>
+                    <li style="color: white;font-size: 2.5vw;">Follow us </li><br>
+                    <li><a href="https://www.instagram.com/abdullah.__.saleem" target="_blank"><i
+                                class="bi bi-instagram" style="color: white;font-size: 2.5vw;"
+                                onmouseover="this.style.color='#cd486b'" onmouseout="this.style.color=' #fff'"></i></a>
+                    </li>
+                    <li><a href="https://www.facebook.com" target="_blank"><i class="bi bi-facebook"
+                                style="color: white; font-size: 2.5vw;" onmouseover="this.style.color='#3b5998'"
+                                onmouseout="this.style.color=' #fff'"></i></a></li>
+                </ul>
+            </div>
         </div>
-        <div class="right" style="padding: 0%;margin: 0%;">
-            <ul>
-                <li style="color: white;font-size: 2.5vw;">Follow us </li><br>
-                <li><a href="https://www.instagram.com/abdullah.__.saleem" target="_blank"><i class="bi bi-instagram"
-                            style="color: white;font-size: 2.5vw;" onmouseover="this.style.color='#cd486b'"
-                            onmouseout="this.style.color=' #fff'"></i></a>
-                </li>
-                <li><a href="https://www.facebook.com" target="_blank"><i class="bi bi-facebook"
-                            style="color: white; font-size: 2.5vw;" onmouseover="this.style.color='#3b5998'"
-                            onmouseout="this.style.color=' #fff'"></i></a></li>
-            </ul>
+        <div class="footerBottom"
+            style="display:flex;text-align: center;flex-direction: column; background-color:#301408 ; padding: 0%;margin: 0%;border: none;">
+            <p style="text-align: center;color: white;font-size: 1.5vw;">Copyright &copy; 2021 THE WELCOME MAT. All
+                Rights
+                Reserved.</p>
         </div>
     </div>
-    <div class="footerBottom"
-        style="display:flex;text-align: center;flex-direction: column; background-color:#301408 ; padding: 0%;margin: 0%;border: none;">
-        <p style="text-align: center;color: white;font-size: 1.5vw;">Copyright &copy; 2021 THE WELCOME MAT. All
-            Rights
-            Reserved.</p>
     </div>
-    </div>
-    </div>
-<script src="./app.js"></script>
+    <script src="./app.js"></script>
 </body>
+
 </html>
