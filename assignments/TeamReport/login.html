@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Reporter</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <div class="main">
+        <div class="top">
+            <div class="header">
+                <img src="./logo.svg" alt="logo" id="logo">
+                <p style="text-align: center; margin: 0%;padding: 0%;">Team Reporter</p>
+            </div>
+        <p></p>
+        </div>
+        <div class="middle">
+            <div class="account">
+                <button id="signUp" onclick="signup()" >Sign Up</button>
+                <button id="logIn" onclick="signin()">Login</button>
+                <div class="login">
+                    <form action="../index.html">
+                        <p style="text-align: center;">Sign in to your Account</p>
+                        <label for="loginEmail">User Name:</label><br>
+                        <input type="email" name="email" required id="loginEmail" placeholder="Enter Email Address"><br><br>
+                        <label for="loginPassword">Password:</label><br>
+                        <input type="password" name="password" required id="loginPassword"
+                            placeholder="Give Password"><br><br>
+                        <input type="Submit" value="Login" id="loginbut">
+                    </form>
+                </div>
+                <div class="Signup" >
+                    <form action="">
+                        <p style="text-align: center;">Create Your Account</p>
+                        <label for="sinupEmail">Email:</label><br>
+                        <input type="email" name="email" required id="sinupEmail" placeholder="Enter Email Address"><br><br>
+                        <label for="sinupPassword">Password:</label><br>
+                        <input type="password" name="password" required id="sinupPassword"
+                            placeholder="Give Password"><br><br>
+                        <label for="cnfpassword">Confirm Password:</label><br>
+                        <input type="password" name="cnfpassword" required id="cnfpassword"
+                            placeholder="Re-enter Password"><br><br>
+                        <input type="Submit" value="Create Account" id="signinbut">
+                    </form>
+                </div>
+
+
+            </div>
+        </div>
+        <div class="footer"></div>
+    </div>
+    <script src="./index.js"></script>
+</body>
+
+</html>
