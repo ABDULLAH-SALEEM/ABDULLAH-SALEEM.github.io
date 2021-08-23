@@ -41,6 +41,7 @@ const createAccount = () => {
 }
 const logIn=()=>{
     const loginEmails = document.getElementById('loginEmail').value;
+    const loginPassword=document.getElementById('loginPassword').value;
     let getOwnerData=localStorage.getItem('owner');
     let ownerArray=JSON.parse(getOwnerData);
     console.log(ownerArray);
@@ -53,7 +54,7 @@ const logIn=()=>{
         for(var keys in ownerArray[i]){
             compareArray.push(ownerArray[i][keys]);
             for(var j=0;j<compareArray.length;j++){
-                if(compareArray[j]===loginEmails){
+                if(compareArray[j]===loginEmails && compareArray[j+1]===loginPassword){
                     return true; 
                 }else{
                     document.getElementById('errmsg').innerHTML='Incorrect Email Or Password.'
