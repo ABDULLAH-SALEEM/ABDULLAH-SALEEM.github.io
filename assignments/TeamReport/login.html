@@ -22,7 +22,7 @@
                 <button id="signUp" onclick="signup()" >Sign Up</button>
                 <button id="logIn" onclick="signin()">Login</button>
                 <div class="login">
-                    <form action="./main.html">
+                    <form action="./main.html" onsubmit="return logIn()">
                         <p style="text-align: center;">Sign in to your Account</p>
                         <label for="loginEmail">User Name:</label><br>
                         <input type="email" name="email" required id="loginEmail" placeholder="Enter Email Address"><br><br>
@@ -33,17 +33,18 @@
                     </form>
                 </div>
                 <div class="Signup" >
-                    <form action="">
+                    <form  onsubmit="return createAccount()">
                         <p style="text-align: center;">Create Your Account</p>
                         <label for="sinupEmail">Email:</label><br>
-                        <input type="email" name="email" required id="sinupEmail" placeholder="Enter Email Address"><br><br>
+                        <input type="email" name="sinupemail" required id="sinupEmail" placeholder="Enter Email Address"><br><br>
                         <label for="sinupPassword">Password:</label><br>
-                        <input type="password" name="password" required id="sinupPassword"
+                        <input type="password" name="sinuppassword" required id="sinupPassword"
                             placeholder="Give Password"><br><br>
                         <label for="cnfpassword">Confirm Password:</label><br>
                         <input type="password" name="cnfpassword" required id="cnfpassword"
                             placeholder="Re-enter Password"><br><br>
-                        <input type="Submit" value="Create Account" id="signinbut">
+                            <p id="errormsg"></p>
+                        <input type="Submit" value="Create Account" id="signinbut" >
                     </form>
                 </div>
 
@@ -52,7 +53,6 @@
         </div>
         <div class="footer"></div>
     </div>
-    <script src="./index.js"></script>
 </body>
-
+<script src="./index.js"></script>
 </html>
