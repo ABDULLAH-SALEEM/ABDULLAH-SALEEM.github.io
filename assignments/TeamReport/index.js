@@ -46,7 +46,7 @@ const logIn=()=>{
     console.log(ownerArray);
     let compareArray=[];
     if(getOwnerData===null){
-        document.getElementById('errmsg').innerHTML='No acc Found.'
+        document.getElementById('errmsg').innerHTML=`Account with username: ${loginEmails} not found.`
         return false;
     }
     for(var i=0; i<ownerArray.length;i++){
