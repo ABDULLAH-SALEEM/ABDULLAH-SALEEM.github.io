@@ -45,22 +45,20 @@ const logIn=()=>{
     let ownerArray=JSON.parse(getOwnerData);
     console.log(ownerArray);
     let compareArray=[];
+    if(getOwnerData===null){
+        document.getElementById('errmsg').innerHTML='No acc Found.'
+        return false;
+    }
     for(var i=0; i<ownerArray.length;i++){
         for(var keys in ownerArray[i]){
             compareArray.push(ownerArray[i][keys]);
-            if(compareArray===null){
-                document.getElementById('errmsg').innerHTML='Account not found.';
-                return false;
-            }else{
-                for(var j=0;j<compareArray.length;j++){
-                    if(compareArray[j]===loginEmails){
-                        return true; 
-                    }else{
-                        document.getElementById('errmsg').innerHTML='Incorrect Email Or Password.'
-                    }
+            for(var j=0;j<compareArray.length;j++){
+                if(compareArray[j]===loginEmails){
+                    return true; 
+                }else{
+                    document.getElementById('errmsg').innerHTML='Incorrect Email Or Password.'
                 }
             }
-           
         }
     }
     console.log(compareArray);
