@@ -51,14 +51,16 @@ const logIn=()=>{
             if(compareArray===null){
                 document.getElementById('errmsg').innerHTML='Account not found.';
                 return false;
-            }
-            for(var j=0;j<compareArray.length;j++){
-                if(compareArray[j]===loginEmails){
-                    return true; 
-                }else{
-                    document.getElementById('errmsg').innerHTML='Incorrect Email Or Password.'
+            }else{
+                for(var j=0;j<compareArray.length;j++){
+                    if(compareArray[j]===loginEmails){
+                        return true; 
+                    }else{
+                        document.getElementById('errmsg').innerHTML='Incorrect Email Or Password.'
+                    }
                 }
             }
+           
         }
     }
     console.log(compareArray);
