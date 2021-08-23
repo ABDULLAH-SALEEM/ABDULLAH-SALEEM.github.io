@@ -49,7 +49,7 @@ const logIn=()=>{
         for(var keys in ownerArray[i]){
             compareArray.push(ownerArray[i][keys]);
             for(var j=0;j<compareArray.length;j++){
-                if(compareArray[j]===''){
+                if(compareArray===null){
                     document.getElementById('errmsg').innerHTML='Account not found.';
                     return false;
                 }else if(compareArray[j]===loginEmails){
