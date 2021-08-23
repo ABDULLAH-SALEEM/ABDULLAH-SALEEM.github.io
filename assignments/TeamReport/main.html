@@ -4,9 +4,31 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    <p>welcome</p>
+    <div class="container">
+        <div class="top">
+            <div class="header">
+                <img src="./logo.svg" alt="logo" id="logo">
+                <p style="text-align: center; margin: 0%;padding: 0%;">Team Reporter</p>
+            </div>
+        </div>
+        <div class="ownerView">
+            <button id="createTeam" class="createTeam" onclick="onClick()">+</button>
+            <div class="createTeamForm" id="createTeamForm">
+                <form>
+                    <label for="teamName">Name Of Team</label><br>
+                    <input type="text" name="teamName" id="teamName" required><br><br>
+                    <label for="addMembers">Add Members</label><br>
+                    <input type="email" multiple required name="addMembers" id="addMembers"><br><br>
+                    <input type="submit" value="Create Now" id="createNow">
+                </form>
+            </div>
+        </div>
+        <div class="memberview"></div>
+    </div>
 </body>
+<script src="./index.js"></script>
 </html>
