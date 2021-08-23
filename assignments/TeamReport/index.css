@@ -92,7 +92,9 @@ form>input{
     .createTeamForm>form{
         padding:10px 10px 10px 10px ;
         border-radius: 5px;
-
+    }
+    #createTeam{
+        left: 70%;
     }
     
 
