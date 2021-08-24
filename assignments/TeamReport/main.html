@@ -18,12 +18,12 @@
         <div class="ownerView">
             <button id="createTeam" class="createTeam" onclick="onClick()">+</button>
             <div class="createTeamForm" id="createTeamForm">
-                <form>
+                <form class="teamForm" id="teamForm" >
                     <label for="teamName">Name Of Team</label><br>
                     <input type="text" name="teamName" id="teamName" required><br><br>
                     <label for="addMembers">Add Members</label><br>
                     <input type="email" multiple required name="addMembers" id="addMembers"><br><br>
-                    <input type="submit" value="Create Now" id="createNow">
+                    <input type="submit" value="Create Now" id="createNow" onclick="createTeam()">
                 </form>
             </div>
         </div>

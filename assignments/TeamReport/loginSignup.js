@@ -22,48 +22,49 @@ const createAccount = () => {
         errormsg.innerHTML = `Password didn't Match`;
         return false;
     } else {
-        let getOwnerData=localStorage.getItem('owner');
-        if(getOwnerData===null){
+        let getOwnerData = localStorage.getItem('owner');
+        if (getOwnerData === null) {
             var ownerArray = []
-        }else{
-            ownerArray=JSON.parse(getOwnerData);
+        } else {
+            ownerArray = JSON.parse(getOwnerData);
         }
         let owner = new Owner(sinupEmails, sinupPasswords);
         ownerArray.push(owner);
-        localStorage.setItem('owner', JSON.stringify(ownerArray))||[];
+        localStorage.setItem('owner', JSON.stringify(ownerArray)) || [];
         errormsg.innerHTML = `Account created successfully`;
-        sinupEmails=null;
-        sinupPasswords=null;
-        cnfpasswords=null;
+        sinupEmails = null;
+        sinupPasswords = null;
+        cnfpasswords = null;
         return false;
     }
-    
+
 }
-const logIn=()=>{
+const logIn = () => {
     const loginEmails = document.getElementById('loginEmail').value;
-    const loginPassword=document.getElementById('loginPassword').value;
-    let getOwnerData=localStorage.getItem('owner');
-    let ownerArray=JSON.parse(getOwnerData);
+    const loginPassword = document.getElementById('loginPassword').value;
+    let getOwnerData = localStorage.getItem('owner');
+    let ownerArray = JSON.parse(getOwnerData);
     console.log(ownerArray);
-    let compareArray=[];
-    if(getOwnerData===null){
-        document.getElementById('errmsg').innerHTML=`Account with username: ${loginEmails} not found.`
+    let compareArray = [];
+    if (getOwnerData === null) {
+        document.getElementById('errmsg').innerHTML = `Account with username: ${loginEmails} not found.`
         return false;
     }
-    for(var i=0; i<ownerArray.length;i++){
-        for(var keys in ownerArray[i]){
+    for (let i = 0; i < ownerArray.length; i++) {
+        for (let keys in ownerArray[i]) {
             compareArray.push(ownerArray[i][keys]);
-            for(var j=0;j<compareArray.length;j++){
-                if(compareArray[j]===loginEmails && compareArray[j+1]===loginPassword){
-                    return true; 
-                }else{
-                    document.getElementById('errmsg').innerHTML='Incorrect Email Or Password.'
+            for (let j = 0; j < compareArray.length; j++) {
+                if (compareArray[j] === loginEmails && compareArray[j + 1] === loginPassword) {
+                    return true;
+                } else {
+                    document.getElementById('errmsg').innerHTML = 'Incorrect Email Or Password.'
                 }
             }
         }
     }
     return false;
 }
+
 
 
 
