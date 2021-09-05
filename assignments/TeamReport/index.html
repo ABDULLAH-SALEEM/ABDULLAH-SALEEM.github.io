@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Report</title>
+    <script defer src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+    <script defer src="./index.js"></script>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div id="loginPage">
+        <div class="main">
+            <div class="top">
+                <div class="header">
+                    <img src="./logo.svg" alt="logo" id="logo">
+                    <p style="text-align: center; margin: 0%;padding: 0%;">Team Reporter</p>
+                </div>
+            </div>
+            <div class="middle" style="margin-top: 5rem;">
+                <div class="account">
+                    <button id="signUp" onclick="signup()">Sign Up</button>
+                    <button id="logIn" onclick="signin()">Login</button>
+                    <div class="login">
+                        <form id="signinForm" >
+                            <p style="text-align: center;">Sign in to your Account</p>
+                            <label for="loginEmail">User Name:</label><br>
+                            <input type="email" name="email" required id="loginEmail"
+                                placeholder="Enter Email Address"><br><br>
+                            <label for="loginPassword">Password:</label><br>
+                            <input type="password" name="password" required id="loginPassword"
+                                placeholder="Give Password"><br><br>
+                            <p id="errmsg"></p>
+                            <input type="Submit" value="Login" id="loginbut" onclick="login()">
+                        </form>
+                    </div>
+                    <div class="Signup">
+                        <form id="signupForm">
+                            <p style="text-align: center;">Create Your Account</p>
+                            <label for="sinupEmail">Email:</label><br>
+                            <input type="email" name="sinupemail" required id="signupEmail"
+                                placeholder="Enter Email Address"><br><br>
+                            <label for="sinupPassword">Password:</label><br>
+                            <input type="password" name="sinuppassword" required id="signupPassword"
+                                placeholder="Give Password"><br><br>
+                            <label for="cnfpassword">Confirm Password:</label><br>
+                            <input type="password" name="cnfpassword" required id="cnfPassword"
+                                placeholder="Re-enter Password"><br><br>
+                            <p id="errormsg"></p>
+                            <input type="Submit" value="Create Account" id="signinbut" onclick="createAcc()">
+                        </form>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="home">
+        <div class="container">
+            <div class="top">
+                <div class="header">
+                    <img src="./logo.svg" alt="logo" id="logo">
+                    <p style="text-align: center; margin: 0%;padding: 0%;">Team Reporter</p>
+                    <button  id="logoutButt" onclick="logout()">Logout</button>
+                </div>
+            </div>
+            <div class="ownerView">
+                <button id="createTeam" class="createTeam" onclick="onClick()">+</button>
+                <div class="createTeamForm" id="createTeamForm">
+                    <form class="teamForm" id="teamForm">
+                        <label for="teamName">Name Of Team</label><br>
+                        <input type="text" name="teamName" id="teamName" required><br><br>
+                        <label for="addMembers">Add Members</label><br>
+                        <input type="email" multiple required name="addMembers" id="addMembers"><br><br>
+                        <input type="submit" value="Create Now" id="createNow" onclick="createTeam()">
+                    </form>
+                </div>
+            </div>
+            <div class="memberview"></div>
+        </div>
+    </div>
+</body>
+</html>

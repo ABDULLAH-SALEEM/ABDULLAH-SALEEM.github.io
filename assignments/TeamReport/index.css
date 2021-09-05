@@ -61,6 +61,19 @@ form>input{
     position: relative;
      
 }
+#logoutButt{
+    cursor: pointer;
+    background-color: #16914B;
+    height: 2.5rem;
+    width: 7rem;
+    outline: none;
+    font-size: 2rem;
+    border: none;
+    border-radius: 5px;
+    position: absolute;
+    right: 90%;
+    top: 90%;
+}
 .createTeamForm>form{
     position: fixed;
     left: 50%;
@@ -95,6 +108,9 @@ form>input{
     }
     #createTeam{
         left: 75%;
+    }
+    #logoutButt{
+        right: 66%;
     }
     
 
