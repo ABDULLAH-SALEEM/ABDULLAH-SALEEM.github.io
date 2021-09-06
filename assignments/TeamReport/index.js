@@ -1,3 +1,12 @@
+// const characters =
+//   "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+// const length = 9;
+// let randomStr = "";
+// for (let i = 0; i < length; i++) {
+//   const randomNum = Math.floor(Math.random() * characters.length);
+//   randomStr += characters[randomNum];
+// }
+// console.log(randomStr);
 const firebaseConfig = {
     apiKey: "AIzaSyCYhBiETWsUag85qv97NSj0Jo9OKvg2OKw",
     authDomain: "teamreport-6ff40.firebaseapp.com",
@@ -18,8 +27,9 @@ const signupform = document.getElementById("signupForm");
 function handleForm(event) { event.preventDefault(); }
 signupform.addEventListener("submit", handleForm);
 const signinform = document.getElementById("signinForm");
-function handleForm(event) { event.preventDefault(); }
 signinform.addEventListener("submit", handleForm);
+const teamForm = document.getElementById("teamForm");
+teamForm.addEventListener("submit", handleForm);
 //////////////////////////////////////////////////////////////////////////////////
 firebase.initializeApp(firebaseConfig);
 const auth = firebase.auth();
@@ -49,14 +59,14 @@ function login() {
         .catch((error) => {
             const errorCode = error.code;
             const errorMessage = error.message;
-            document.getElementById("errmsg").innerHTML="Password or User Not Matched";
+            document.getElementById("errmsg").innerHTML = "Password or User Not Matched";
             // ..
         });
 }
 //////////////////////////////////////////////////////////////////////////////////
 function logout() {
     const password = document.getElementById("loginPassword");
-    password.value=null;
+    password.value = null;
     auth.signOut().then(() => {
         // Sign-out successful.
     }).catch((error) => {
@@ -78,7 +88,7 @@ function createAcc() {
             .catch((error) => {
                 var errorCode = error.code;
                 var errorMessage = error.message;
-                document.getElementById("errormsg").innerHTML="Password Must Be Six Letters Long.";
+                document.getElementById("errormsg").innerHTML = "Password Must Be Six Letters Long.";
                 // ..
             });
     } else {
@@ -88,10 +98,7 @@ function createAcc() {
 //////////////////////////////////////////////////////////////////////////////////
 auth.onAuthStateChanged((user) => {
     if (user) {
-        // database.ref('users/' + user.uid).update({
-        //     email: user.email,
-        //     lastLoggedInAt: new Date()
-        // });
+        getTeamsData(user);
         document.getElementById("loginPage").style.display = "none";
         document.getElementById("home").style.display = "block";
     } else {
@@ -99,3 +106,22 @@ auth.onAuthStateChanged((user) => {
         document.getElementById("home").style.display = "none";
     }
 });
+const getTeamsData = (user) => {
+    database.ref(auth.currentUser.uid + "/teams/" + document.getElementById("teamName").value).on('child_added', (snapshot) => {
+        const data = snapshot.val();
+        const owner = data.Owner;
+        const teamName = data.teamName;
+        const addMembers = data.addMembers;
+        const tableRow = `<tr><td>${teamName}</td><td>${owner}</td><td>${addMembers}</td></tr>`
+        document.getElementById("tbody").innerHTML += tableRow;
+    });
+}
+const createTeam = () => {
+    database.ref(auth.currentUser.uid + "/teams/" + document.getElementById("teamName").value).set({
+        Owner: auth.currentUser.email,
+        teamName: document.getElementById("teamName").value,
+        addMembers: document.getElementById("addMembers").value
+    })
+    document.getElementById("teamForm").style.display = 'none';
+}
+
