@@ -68,6 +68,7 @@ function logout() {
     const password = document.getElementById("loginPassword");
     password.value = null;
     auth.signOut().then(() => {
+
         // Sign-out successful.
     }).catch((error) => {
         // An error happened.
@@ -98,16 +99,25 @@ function createAcc() {
 //////////////////////////////////////////////////////////////////////////////////
 auth.onAuthStateChanged((user) => {
     if (user) {
-        getTeamsData(user);
+        // setTeamsData();
+        getTeamsData();
         document.getElementById("loginPage").style.display = "none";
         document.getElementById("home").style.display = "block";
-    } else {
+    } else { 
         document.getElementById("loginPage").style.display = "block";
         document.getElementById("home").style.display = "none";
     }
 });
-const getTeamsData = (user) => {
-    database.ref(auth.currentUser.uid + "/teams/" + document.getElementById("teamName").value).on('child_added', (snapshot) => {
+// const setTeamsData = () => {
+//     const databaseRef = database.ref(auth.currentUser.uid + "/teams/" + document.getElementById("teamName").
+//     value);
+//     databaseRef.on('value', (data) => {
+//         getTeamsData(data.val());
+//     });
+// };
+const getTeamsData = () => { 
+    database.ref(auth.currentUser.uid + "/teams/" + document.getElementById("teamName").value).on('child_added',
+     (snapshot) => { 
         const data = snapshot.val();
         const owner = data.Owner;
         const teamName = data.teamName;
