@@ -21,6 +21,7 @@ const createTeamForm = document.getElementById("teamForm");
 createTeamForm.style.display = "none";
 const onClick = () => {
     createTeamForm.style.display = "block";
+    document.getElementById("ownedTeamsArea").style.display="none";
 }
 //////////////////////////////////////////////////////////////////////////////////
 const signupform = document.getElementById("signupForm");
@@ -119,11 +120,21 @@ const getTeamsData = () => {
     database.ref(auth.currentUser.uid + "/teams/" + document.getElementById("teamName").value).on('child_added',
      (snapshot) => { 
         const data = snapshot.val();
-        const owner = data.Owner;
-        const teamName = data.teamName;
-        const addMembers = data.addMembers;
-        const tableRow = `<tr><td>${teamName}</td><td>${owner}</td><td>${addMembers}</td></tr>`
-        document.getElementById("tbody").innerHTML += tableRow;
+        const divE=document.createElement("div");
+        const divE1=document.createElement("div");
+        const teamName = document.createTextNode(data.teamName);
+        divE1.appendChild(teamName);
+        const divE2=document.createElement("div");
+        const ownerName = document.createTextNode(data.Owner);
+        divE2.appendChild(ownerName);
+        const divE3=document.createElement("div");
+        const memName = document.createTextNode(data.addMembers);
+        divE3.appendChild(memName);
+        divE.appendChild(divE1).classList.add("divChildEdit");
+        divE.appendChild(divE2).classList.add("divChildEdit");
+        divE.appendChild(divE3).classList.add("divChildEdit");
+        document.getElementById("ownedTeamsArea").appendChild(divE);
+        divE.classList.add("divEdit");
     });
 }
 const createTeam = () => {
@@ -133,5 +144,6 @@ const createTeam = () => {
         addMembers: document.getElementById("addMembers").value
     })
     document.getElementById("teamForm").style.display = 'none';
+    document.getElementById("ownedTeamsArea").style.display="block";
 }
 

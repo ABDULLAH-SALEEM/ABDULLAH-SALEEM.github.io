@@ -65,11 +65,15 @@
                 <div class="header">
                     <img src="./logo.svg" alt="logo" id="logo">
                     <p style="text-align: center; margin: 0%;padding: 0%;">Team Reporter</p>
-                    <button  id="logoutButt" onclick="logout()">Logout</button>
+                    <div class="twoButt">
+                        <button id="createTeam" class="createTeam" onclick="onClick()">+</button>
+                        <button  id="logoutButt" onclick="logout()">Logout</button>
+                    </div>
+                    
                 </div>
             </div>
             <div class="ownerView">
-                <button id="createTeam" class="createTeam" onclick="onClick()">+</button>
+                
                 <div class="createTeamForm" id="createTeamForm">
                     <form class="teamForm" id="teamForm">
                         <label for="teamName">Name Of Team</label><br>
@@ -79,16 +83,9 @@
                         <input type="submit" value="Create Now" id="createNow" onclick="createTeam()">
                     </form>
                 </div>
-                <div class="table">
-                    <table>
-                        <tr>
-                            <th>Team Name</th>
-                            <th>Own By</th>
-                            <th>Members Name</th>
-                        </tr>
-                        <tbody id="tbody"></tbody>
-                    </table>
-                </div>
+                <fieldset id="ownedTeamsArea" style="border: 1px solid #16914B;">
+                    <legend style="text-align: center;">Teams You Own</legend>
+                </fieldset>
             </div>
             <div class="memberview"></div>
         </div>

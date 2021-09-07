@@ -53,13 +53,15 @@ form>input{
     font-size: 2rem;
     border: none;
     border-radius: 5px;
-    position: absolute;
-    left: 90%;
-    top: 90%;
 }
 .createTeamForm{
     position: relative;
      
+}
+.twoButt{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 #logoutButt{
     cursor: pointer;
@@ -70,9 +72,6 @@ form>input{
     font-size: 2rem;
     border: none;
     border-radius: 5px;
-    position: absolute;
-    right: 90%;
-    top: 90%;
 }
 .createTeamForm>form{
     position: fixed;
@@ -93,6 +92,16 @@ form>input{
     margin: 0%;
     padding: 0%;
 }
+.divEdit{
+    padding: 0%;
+    margin: 2px 2px 4px 2px;
+    width: 100%;
+    /* border: 1px solid #16914b4d ; */
+}
+.divChildEdit{
+    background-color:#16914b4d;
+    padding: 2px 2px 2px 5px;
+}
 @media (max-width: 768px){
     .createTeamForm>form{
         position: fixed;
@@ -106,12 +115,4 @@ form>input{
         padding:10px 10px 10px 10px ;
         border-radius: 5px;
     }
-    #createTeam{
-        left: 75%;
-    }
-    #logoutButt{
-        right: 66%;
-    }
-    
-
 }
