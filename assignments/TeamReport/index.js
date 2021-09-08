@@ -130,7 +130,7 @@ const getTeamsData = () => {
             const divE0 = document.createElement("div");
             const divE = document.createElement("div");
             const imgE = document.createElement("img");
-            imgE.src = "https://o.remove.bg/downloads/1313f011-6d0e-4d47-bb1a-6a220d6292d0/kisspng-teamwork-organization-logo-company-5c589d9ee12833.4922234015493113909223-removebg-preview.png";
+            imgE.src = "https://i.ibb.co/q7RvPS6/kisspng-teamwork-organization-logo-company-5c589d9ee12833-4922234015493113909223-removebg-preview.png";
             imgE.style.width = "200px";
             imgE.style.height = "200px"
             const pE = document.createElement("p");
