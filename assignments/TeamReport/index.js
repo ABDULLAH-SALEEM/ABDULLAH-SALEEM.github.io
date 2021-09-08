@@ -207,6 +207,9 @@ document.getElementById("teamOwnerView").style.display = "none";
 window.addEventListener("click",()=>{
     const teamTitle=document.getElementById("teamTitle");
     teamTitle.onclick=teamOwnerViewShow();
+    document.getElementById("ownedTeamsArea").style.display="none";
+    document.getElementById("createTeam").style.display="none";
+
 })
 
 
