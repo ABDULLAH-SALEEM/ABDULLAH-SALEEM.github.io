@@ -6,7 +6,6 @@
 //   const randomNum = Math.floor(Math.random() * characters.length);
 //   randomStr += characters[randomNum];
 // }
-// console.log(randomStr);
 const firebaseConfig = {
     apiKey: "AIzaSyCYhBiETWsUag85qv97NSj0Jo9OKvg2OKw",
     authDomain: "teamreport-6ff40.firebaseapp.com",
@@ -21,7 +20,7 @@ const createTeamForm = document.getElementById("teamForm");
 createTeamForm.style.display = "none";
 const onClick = () => {
     createTeamForm.style.display = "block";
-    document.getElementById("ownedTeamsArea").style.display="none";
+    document.getElementById("ownedTeamsArea").style.display = "none";
 }
 //////////////////////////////////////////////////////////////////////////////////
 const signupform = document.getElementById("signupForm");
@@ -31,6 +30,10 @@ const signinform = document.getElementById("signinForm");
 signinform.addEventListener("submit", handleForm);
 const teamForm = document.getElementById("teamForm");
 teamForm.addEventListener("submit", handleForm);
+const questionForm = document.getElementById("questionForm");
+questionForm.addEventListener("submit", handleForm);
+const memberForm = document.getElementById("memberForm");
+memberForm.addEventListener("submit", handleForm);
 //////////////////////////////////////////////////////////////////////////////////
 firebase.initializeApp(firebaseConfig);
 const auth = firebase.auth();
@@ -104,7 +107,7 @@ auth.onAuthStateChanged((user) => {
         getTeamsData();
         document.getElementById("loginPage").style.display = "none";
         document.getElementById("home").style.display = "block";
-    } else { 
+    } else {
         document.getElementById("loginPage").style.display = "block";
         document.getElementById("home").style.display = "none";
     }
@@ -116,34 +119,95 @@ auth.onAuthStateChanged((user) => {
 //         getTeamsData(data.val());
 //     });
 // };
-const getTeamsData = () => { 
-    database.ref(auth.currentUser.uid + "/teams/" + document.getElementById("teamName").value).on('child_added',
-     (snapshot) => { 
-        const data = snapshot.val();
-        const divE=document.createElement("div");
-        const divE1=document.createElement("div");
-        const teamName = document.createTextNode(data.teamName);
-        divE1.appendChild(teamName);
-        const divE2=document.createElement("div");
-        const ownerName = document.createTextNode(data.Owner);
-        divE2.appendChild(ownerName);
-        const divE3=document.createElement("div");
-        const memName = document.createTextNode(data.addMembers);
-        divE3.appendChild(memName);
-        divE.appendChild(divE1).classList.add("divChildEdit");
-        divE.appendChild(divE2).classList.add("divChildEdit");
-        divE.appendChild(divE3).classList.add("divChildEdit");
-        document.getElementById("ownedTeamsArea").appendChild(divE);
-        divE.classList.add("divEdit");
-    });
+// document.getElementById("displayTeam").style.display="none";
+// function displayTeam(){
+//     document.getElementById("displayTeam").style.display="block";
+// }
+const getTeamsData = () => {
+    database.ref(auth.currentUser.uid + "/teams/" + document.getElementById("teamName").value).once('child_added',
+        (snapshot) => {
+            const data = snapshot.val();
+            const divE0 = document.createElement("div");
+            const divE = document.createElement("div");
+            const imgE = document.createElement("img");
+            imgE.src = "https://o.remove.bg/downloads/1313f011-6d0e-4d47-bb1a-6a220d6292d0/kisspng-teamwork-organization-logo-company-5c589d9ee12833.4922234015493113909223-removebg-preview.png";
+            imgE.style.width = "200px";
+            imgE.style.height = "200px"
+            const pE = document.createElement("p");
+            const pEtext = document.createTextNode(data.teamName);
+            pE.appendChild(pEtext);
+            divE.appendChild(imgE);
+            divE.appendChild(pE);
+            divE0.appendChild(divE);
+            divE0.classList.add("teamArea");
+            document.getElementById("ownedTeamsArea").appendChild(divE0);
+            document.getElementById("teamForm").style.display = 'none';
+            document.getElementById("ownedTeamsArea").style.display = "block";
+            pE.style.cursor="pointer";
+            pE.setAttribute('id', 'teamTitle');
+        });
 }
+
 const createTeam = () => {
     database.ref(auth.currentUser.uid + "/teams/" + document.getElementById("teamName").value).set({
-        Owner: auth.currentUser.email,
         teamName: document.getElementById("teamName").value,
-        addMembers: document.getElementById("addMembers").value
+        ownerName: auth.currentUser.email
     })
-    document.getElementById("teamForm").style.display = 'none';
-    document.getElementById("ownedTeamsArea").style.display="block";
+    // const result = countString(document.getElementById("addMembers").value, "@");
+    // console.log(result);
 }
+// function countString(str, letter) {
+//     let count = 0;
+//     for (let i = 0; i < str.length; i++) {
+//         if (str.charAt(i) == letter) {
+//             count += 1;
+//         }
+//     }
+//     return count;
+// }
+// function sendEmail() {
+//     const memName=document.getElementById("addMembers").value;
+//     const pass= randomStr
+// 	Email.send({
+// 	Host: "smtp.gmail.com",
+// 	Username : "saleemabdullah791@gmail.com",
+// 	Password : "abdullah1221",
+// 	To : memName,
+// 	From : "saleemabdullah791@gmail.com",
+// 	Subject : `${auth.currentUser.email} sends joining request`,
+// 	Body : `Joins ${auth.currentUser.email} team by using given credentials username: ${memName} and password: ${pass}`,
+// 	}).then(
+// 		message => alert("mail sent successfully")
+// 	);
+// }
+// function addAcc() {
+//     const email = document.getElementById("addMembers").value;
+//     const password = randomStr;
+//         auth.createUserWithEmailAndPassword(email, password)
+//             .then((userCredential) => {
+//                 var user = userCredential.user;
+//             })
+//             .catch((error) => {
+//                 var errorCode = error.code;
+//                 var errorMessage = error.message;
+//             });
+// }
+const addQuestions = () => {
+    const questions = document.getElementById("questionArea").value;
+    document.getElementById("questions").innerHTML += `Q) ${questions} <br> `;
+}
+const addMembers = () => {
+    const members = document.getElementById("memberArea").value;
+    document.getElementById("members").innerHTML += ` ${members} `;
+}
+document.getElementById("teamOwnerView").style.display = "none";
+ const teamOwnerViewShow = () => {
+      document.getElementById("teamOwnerView").style.display = "block";
+ }
+window.addEventListener("click",()=>{
+    const teamTitle=document.getElementById("teamTitle");
+    teamTitle.onclick=teamOwnerViewShow();
+})
+
+
 

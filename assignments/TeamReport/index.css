@@ -54,6 +54,17 @@ form>input{
     border: none;
     border-radius: 5px;
 }
+.addMemButt{
+    height: 2.5rem;
+    width: 9.8rem;
+    border: none;
+    outline: none;
+    background-color: #16914B;
+    color: #000;
+    cursor: pointer;
+    font-weight: 550;
+    border-radius: 5px;
+}
 .createTeamForm{
     position: relative;
      
@@ -92,11 +103,64 @@ form>input{
     margin: 0%;
     padding: 0%;
 }
+.teamOwnerView{
+    width: 70%;
+    position: fixed;
+    left: 50%;
+    top: 15%;
+    transform: translate(-50%,0%);
+    margin: 0%;
+    padding: 0%;
+    background-color: #16914b4d;
+}
+.teamOwnerView>button{
+    outline: none;
+    cursor: pointer;
+    width: 6rem;
+    height: 2.5rem;
+    background-color: rgba(245, 222, 179, 0);
+    border: none;
+}
+.teamOwnerView>button:active{
+    border-bottom: white;
+}
+.teamOwnerView>form{
+    background-color: #16914b4d;
+    margin: 5px 5px 5px 7px;
+    padding:20px 20px 20px 20px ;
+    border-radius: 7px;
+}
+#questions,#members{
+    background-color: #16914b4d;
+    margin: 5px 5px 5px 7px;
+    padding:20px 20px 20px 20px ;
+    border-radius: 7px;
+}
+.buttt{
+    background-color:#16914B;
+    outline: none;
+    cursor: pointer;
+    width: 6rem;
+    margin-top: 7px;
+}
+#questionArea,#memberArea{
+    width: 100%;
+}
 .divEdit{
     padding: 0%;
     margin: 2px 2px 4px 2px;
-    width: 100%;
+    width: 200px;
+    height: 200px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
     /* border: 1px solid #16914b4d ; */
+}
+.teamArea{
+    display: inline-flex;
+    flex-wrap: wrap;
+    margin-right: 15px;  
+    text-align: center; 
 }
 .divChildEdit{
     background-color:#16914b4d;
