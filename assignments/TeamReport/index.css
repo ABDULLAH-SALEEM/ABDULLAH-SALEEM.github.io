@@ -142,11 +142,14 @@ form>input{
     padding:20px 20px 20px 20px ;
     border-radius: 7px;
 }
-#questions,#members{
+#questions,#members,#teamNameTitle{
     background-color: #16914b4d;
     margin: 5px 5px 5px 7px;
     padding:20px 20px 20px 20px ;
     border-radius: 7px;
+}
+.teamNameTitle{
+    background-color: #16914b4d;
 }
 .buttt{
     background-color:#16914B;
@@ -157,6 +160,13 @@ form>input{
 }
 #questionArea,#memberArea{
     width: 100%;
+}
+#teamTitleArea{
+    height: 2.5rem;
+    width: 100%;
+    border: 1px solid #16914B;
+    outline: none;
+    border-radius: 5px;
 }
 .divEdit{
     padding: 0%;

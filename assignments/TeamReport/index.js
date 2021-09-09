@@ -59,9 +59,9 @@ function login() {
             // Signed in
             const user = userCredential.user;
             // ...
-            setTimeout(()=>{
+            setTimeout(() => {
                 location.reload();
-            },10)
+            }, 10)
         })
         .catch((error) => {
             const errorCode = error.code;
@@ -127,7 +127,7 @@ auth.onAuthStateChanged((user) => {
 //     document.getElementById("displayTeam").style.display="block";
 // }
 const getTeamsData = () => {
-    database.ref(auth.currentUser.uid + "/teams/" + document.getElementById("teamName").value).once('child_added',
+    database.ref(auth.currentUser.uid + "/teams/" + document.getElementById("teamName").value).on('child_added',
         (snapshot) => {
             const data = snapshot.val();
             const divE0 = document.createElement("div");
@@ -146,21 +146,25 @@ const getTeamsData = () => {
             document.getElementById("ownedTeamsArea").appendChild(divE0);
             document.getElementById("teamForm").style.display = 'none';
             document.getElementById("ownedTeamsArea").style.display = "block";
-            pE.style.cursor="pointer";
+            pE.style.cursor = "pointer";
             pE.setAttribute('class', 'teamTitle');
+            
         });
 }
 
 const createTeam = () => {
     database.ref(auth.currentUser.uid + "/teams/" + document.getElementById("teamName").value).set({
         teamName: document.getElementById("teamName").value,
-        ownerName: auth.currentUser.email
+        ownerName: auth.currentUser.email,
+        teamQuestions: "",
+        teamMembers: ""
     })
     // const result = countString(document.getElementById("addMembers").value, "@");
     // console.log(result);
-    document.getElementById("teamForm").style.display="none";
+    document.getElementById("teamForm").style.display = "none";
     document.getElementById("ownedTeamsArea").style.display = "block";
 }
+var teamName = document.getElementById("teamName").value;
 // function countString(str, letter) {
 //     let count = 0;
 //     for (let i = 0; i < str.length; i++) {
@@ -198,28 +202,36 @@ const createTeam = () => {
 //             });
 // }
 const addQuestions = () => {
-    const questions = document.getElementById("questionArea").value;
+    let questions = document.getElementById("questionArea").value;
     document.getElementById("questions").innerHTML += `Q) ${questions} <br> `;
+    document.getElementById("questionArea").value=null;
 }
 const addMembers = () => {
-    const members = document.getElementById("memberArea").value;
+    let members = document.getElementById("memberArea").value;
     document.getElementById("members").innerHTML += ` ${members} `;
+    document.getElementById("memberArea").value=null;
 }
 document.getElementById("teamOwnerView").style.display = "none";
- const teamOwnerViewShow = () => {
-      document.getElementById("teamOwnerView").style.display = "block";
-      document.getElementById("createTeam").style.display="none";
-      document.getElementById("ownedTeamsArea").style.display = "none";
- }
-setTimeout(function(){ 
-    teamTitleE=document.getElementsByClassName("teamTitle");
+const teamOwnerViewShow = () => {
+    document.getElementById("teamOwnerView").style.display = "block";
+    document.getElementById("createTeam").style.display = "none";
+    document.getElementById("ownedTeamsArea").style.display = "none";
+}
+setTimeout(function () {
+    teamTitleE = document.getElementsByClassName("teamTitle");
     for (let i = 0, len = teamTitleE.length; i < len; i++) {
-        teamTitleE[i].addEventListener("click",teamOwnerViewShow);
+        teamTitleE[i].addEventListener("click", teamOwnerViewShow);
     }
- }, 2000);
-const saveChanges=()=>{
-    document.getElementById("saveChanges").addEventListener("click",()=>{
-        document.getElementById("createTeam").style.display="block";
+}, 2000);
+const saveChanges = () => {
+    document.getElementById("saveChanges").addEventListener("click", () => {
+        database.ref(auth.currentUser.uid + "/teams/" + document.getElementById("teamTitleArea").value).update({
+            teamName: document.getElementById("teamTitleArea").value,
+            ownerName: auth.currentUser.email,
+            teamMembers: document.getElementById("members").innerHTML,
+            teamQuestions: document.getElementById("questions").innerHTML
+        })
+        document.getElementById("createTeam").style.display = "block";
         document.getElementById("ownedTeamsArea").style.display = "block";
         document.getElementById("teamOwnerView").style.display = "none";
     })
