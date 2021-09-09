@@ -59,6 +59,9 @@ function login() {
             // Signed in
             const user = userCredential.user;
             // ...
+            setTimeout(()=>{
+                location.reload();
+            },10)
         })
         .catch((error) => {
             const errorCode = error.code;
@@ -144,7 +147,7 @@ const getTeamsData = () => {
             document.getElementById("teamForm").style.display = 'none';
             document.getElementById("ownedTeamsArea").style.display = "block";
             pE.style.cursor="pointer";
-            pE.setAttribute('id', 'teamTitle');
+            pE.setAttribute('class', 'teamTitle');
         });
 }
 
@@ -155,6 +158,8 @@ const createTeam = () => {
     })
     // const result = countString(document.getElementById("addMembers").value, "@");
     // console.log(result);
+    document.getElementById("teamForm").style.display="none";
+    document.getElementById("ownedTeamsArea").style.display = "block";
 }
 // function countString(str, letter) {
 //     let count = 0;
@@ -203,14 +208,35 @@ const addMembers = () => {
 document.getElementById("teamOwnerView").style.display = "none";
  const teamOwnerViewShow = () => {
       document.getElementById("teamOwnerView").style.display = "block";
+      document.getElementById("createTeam").style.display="none";
+      document.getElementById("ownedTeamsArea").style.display = "none";
  }
-window.addEventListener("click",()=>{
-    const teamTitle=document.getElementById("teamTitle");
-    teamTitle.onclick=teamOwnerViewShow();
-    document.getElementById("ownedTeamsArea").style.display="none";
-    document.getElementById("createTeam").style.display="none";
-
-})
-
+setTimeout(function(){ 
+    teamTitleE=document.getElementsByClassName("teamTitle");
+    for (let i = 0, len = teamTitleE.length; i < len; i++) {
+        teamTitleE[i].addEventListener("click",teamOwnerViewShow);
+    }
+ }, 2000);
+const saveChanges=()=>{
+    document.getElementById("saveChanges").addEventListener("click",()=>{
+        document.getElementById("createTeam").style.display="block";
+        document.getElementById("ownedTeamsArea").style.display = "block";
+        document.getElementById("teamOwnerView").style.display = "none";
+    })
+}
+// setTimeout(()=>{
+//    window.onload = function() {
+// 	if(!window.location.hash) {
+// 		window.location = window.location + '#loaded';
+// 		window.location.reload();
+// 	}
+// }
+// },5000);
+// window.onload = function() {
+//     if(!window.location.hash) {
+//         window.location = window.location + '#loaded';
+//         window.location.reload();
+//     }
+// }
 
 
