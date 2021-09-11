@@ -204,4 +204,8 @@ form>input{
     .saveChanges{
         width: 95%;
     }
+    .teamOwnerView{
+        width: 90%;
+        top: 20%;
+    }
 }
