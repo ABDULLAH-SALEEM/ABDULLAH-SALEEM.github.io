@@ -216,6 +216,7 @@ const createTeam = () => {
     location.reload();
 }
 function sendEmail() {
+    const url="https://abdullah-saleem.github.io/assignments/TeamReport/index.html"
     const memName=document.getElementById("memberArea").value;
 	Email.send({
 	Host: "smtp.gmail.com",
@@ -224,7 +225,7 @@ function sendEmail() {
 	To : memName,
 	From : "saleemabdullah791@gmail.com",
 	Subject : `${auth.currentUser.email} added You`,
-	Body : `Joins ${auth.currentUser.email} team by signingup with same email on which we have send you a mail.`,
+	Body : `Joins ${auth.currentUser.email} team by signingup by clicking given link ${url} with same email on which we have send you a mail.`,
 	}).then(
 		message => alert("mail sent successfully")
 	);
