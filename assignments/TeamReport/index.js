@@ -172,11 +172,13 @@ const teamChanges = () => {
         data2.Members;
         allMemArray.push(data2.Members);
     })
+    // location.reload();
     setTimeout(() => {
         for (let i = 0; i < memArray.length; i++) {
             for (let j = 0; j < allMemArray.length; j++) {
                 console.log(memArray[i] == allMemArray[j])
                 if (memArray[i] == allMemArray[j]&&memArray[i]==auth.currentUser.email) {
+                    
                     const divE0 = document.createElement("div");
                     const divE = document.createElement("div");
                     const imgE = document.createElement("img");
@@ -199,6 +201,7 @@ const teamChanges = () => {
             }
         }
     }, 2000)
+    
 }
 const createTeam = () => {
     database.ref(auth.currentUser.uid + "/teams/" + document.getElementById("teamName").value).set({
