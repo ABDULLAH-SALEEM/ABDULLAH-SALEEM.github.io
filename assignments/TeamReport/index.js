@@ -79,10 +79,10 @@ function createAcc() {
     const email = document.getElementById("signupEmail").value;
     const password = document.getElementById("signupPassword").value;
     const cnfpassword = document.getElementById("cnfPassword").value;
-    database.ref("users").push({
-        email
-    })
     if (cnfpassword === password) {
+        database.ref("users").push({
+            email
+        })
         auth.createUserWithEmailAndPassword(email, password)
             .then((userCredential) => {
                 // Signed in
@@ -152,13 +152,13 @@ const getTeamsData = () => {
 const teamChanges = () => {
     let memArray = [];
     let allMemArray = [];
-    database.ref("users").on("child_added", (snapshot) => {
+    database.ref("users").once("child_added", (snapshot) => {
         const data1 = snapshot.val();
         data1.email;
         memArray.push(data1.email);
     })
     console.log(memArray);
-    database.ref("allmembers").on("child_added", (snapshot) => {
+    database.ref("allmembers").once("child_added", (snapshot) => {
         const data2 = snapshot.val();
         data2.Members;
         allMemArray.push(data2.Members);
@@ -167,7 +167,7 @@ const teamChanges = () => {
         for (let i = 0; i < memArray.length; i++) {
             for (let j = 0; j < allMemArray.length; j++) {
                 console.log(memArray[i] == allMemArray[j])
-                if (memArray[i] == allMemArray[j]&&memArray[i]!==auth.currentUser.email) {
+                if (memArray[i] == allMemArray[j]&&memArray[i]==auth.currentUser.email) {
                     const divE0 = document.createElement("div");
                     const divE = document.createElement("div");
                     const imgE = document.createElement("img");
