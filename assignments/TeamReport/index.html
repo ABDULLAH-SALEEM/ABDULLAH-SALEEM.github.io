@@ -114,24 +114,34 @@
                     <div id="teamNameTitle" style="text-align: center;font-weight: 550;">
                         <input type="text" id="teamTitleArea" placeholder="Enter Team Name" required><br>
                     </div>
-                    
-                    <div id="questions" ></div>
+
+                    <div id="questions"></div>
                     <form id="questionForm" onsubmit="return addQuestions()">
                         <input type="text" id="questionArea" required><br>
-                        <input type="submit" value="Add Question" class="buttt addQuestions" >
+                        <input type="submit" value="Add Question" class="buttt addQuestions">
                     </form><br>
                     <div id="members"></div>
                     <form id="memberForm" onsubmit="return addMembers()">
                         <input type="text" id="memberArea"><br>
                         <input type="submit" value="Add Members" class="buttt addMemberss">
                     </form>
-                    <input type="button" value="Save Changes" class="saveChanges" id="saveChanges" onclick="saveChanges()">
+                    <input type="button" value="Save Changes" class="saveChanges" id="saveChanges"
+                        onclick="saveChanges()">
                 </div>
             </div>
+
             <fieldset id="partOfTeamsArea" style="border: 1px solid #16914B;">
                 <legend style="text-align: center;">Teams You Are Part Of</legend>
             </fieldset>
-            <div class="memberview"></div>
+            <div id="memberView">
+                <div id="qsToBeAns"></div>
+                <form>
+                    <textarea id="ansArea" placeholder="Write Your Answers Here" required></textarea><br><br>
+                    <input type="button" value="Submit Response" id="submitRes">
+                </form>
+            </div>
+
+
         </div>
     </div>
 </body>

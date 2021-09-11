@@ -103,7 +103,10 @@ form>input{
     margin: 0%;
     padding: 0%;
 }
-.saveChanges{
+#memberView>form>textarea{
+    width: 100%;
+}
+.saveChanges,#submitRes{
     background-color: #16914B;
     width: 98.5%;
     height: 2.5rem;
@@ -115,7 +118,7 @@ form>input{
     /* position: fixed; */
     /* left: 100%; */
 }
-.teamOwnerView{
+.teamOwnerView,#memberView{
     width: 70%;
     position: absolute;
     left: 50%;
@@ -136,7 +139,7 @@ form>input{
 .teamOwnerView>button:active{
     border-bottom: white;
 }
-.teamOwnerView>form{
+.teamOwnerView>form,#memberView>form{
     background-color: #16914b4d;
     margin: 5px 5px 5px 7px;
     padding:20px 20px 20px 20px ;
@@ -204,7 +207,7 @@ form>input{
     .saveChanges{
         width: 95%;
     }
-    .teamOwnerView{
+    .teamOwnerView,#memberView{
         width: 90%;
         top: 20%;
     }

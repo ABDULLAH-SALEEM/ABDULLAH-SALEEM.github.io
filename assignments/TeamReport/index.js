@@ -13,6 +13,7 @@ createTeamForm.style.display = "none";
 const onClick = () => {
     createTeamForm.style.display = "block";
     document.getElementById("ownedTeamsArea").style.display = "none";
+    document.getElementById("partOfTeamsArea").style.display = "none";
 }
 //////////////////////////////////////////////////////////////////////////////////
 const signupform = document.getElementById("signupForm");
@@ -121,6 +122,7 @@ const saveChanges = () => {
         document.getElementById("createTeam").style.display = "block";
         document.getElementById("ownedTeamsArea").style.display = "block";
         document.getElementById("teamOwnerView").style.display = "none";
+        document.getElementById("partOfTeamsArea").style.display = "block";
     })
 }
 const getTeamsData = () => {
@@ -198,6 +200,7 @@ const createTeam = () => {
     })
     document.getElementById("teamForm").style.display = "none";
     document.getElementById("ownedTeamsArea").style.display = "block";
+    document.getElementById("partOfTeamsArea").style.display = "block";
 }
 // function sendEmail() {
 //     const memName=document.getElementById("addMembers").value;
@@ -235,10 +238,18 @@ const addMembers = () => {
 
 }
 document.getElementById("teamOwnerView").style.display = "none";
+document.getElementById("memberView").style.display = "none";
 const teamOwnerViewShow = () => {
     document.getElementById("teamOwnerView").style.display = "block";
     document.getElementById("createTeam").style.display = "none";
     document.getElementById("ownedTeamsArea").style.display = "none";
+    document.getElementById("partOfTeamsArea").style.display = "none";
+}
+const memberViewShow = () => {
+    document.getElementById("memberView").style.display = "block";
+    document.getElementById("createTeam").style.display = "none";
+    document.getElementById("ownedTeamsArea").style.display = "none";
+    document.getElementById("partOfTeamsArea").style.display = "none"; 
 }
 setTimeout(function () {
     teamTitleE = document.getElementsByClassName("teamTitle");
@@ -249,6 +260,6 @@ setTimeout(function () {
 setTimeout(function () {
     teamTitleE = document.getElementsByClassName("teamMemberTitle");
     for (let i = 0, len = teamTitleE.length; i < len; i++) {
-        teamTitleE[i].addEventListener("click", teamOwnerViewShow);
+        teamTitleE[i].addEventListener("click", memberViewShow);
     }
 }, 3000);
