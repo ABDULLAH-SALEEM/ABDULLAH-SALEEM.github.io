@@ -186,7 +186,7 @@ const teamChanges = () => {
                     imgE.style.width = "200px";
                     imgE.style.height = "200px"
                     const pE = document.createElement("p");
-                    const pEtext = document.createTextNode('Team Alpha');
+                    const pEtext = document.createTextNode('Team');
                     pE.appendChild(pEtext);
                     divE.appendChild(imgE);
                     divE.appendChild(pE);
