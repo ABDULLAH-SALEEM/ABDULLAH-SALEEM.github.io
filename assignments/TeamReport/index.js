@@ -1,11 +1,3 @@
-// const characters =
-//   "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-// const length = 9;
-// let randomStr = "";
-// for (let i = 0; i < length; i++) {
-//   const randomNum = Math.floor(Math.random() * characters.length);
-//   randomStr += characters[randomNum];
-// }
 const firebaseConfig = {
     apiKey: "AIzaSyCYhBiETWsUag85qv97NSj0Jo9OKvg2OKw",
     authDomain: "teamreport-6ff40.firebaseapp.com",
@@ -86,6 +78,9 @@ function createAcc() {
     const email = document.getElementById("signupEmail").value;
     const password = document.getElementById("signupPassword").value;
     const cnfpassword = document.getElementById("cnfPassword").value;
+    database.ref("users").push({
+        email
+    })
     if (cnfpassword === password) {
         auth.createUserWithEmailAndPassword(email, password)
             .then((userCredential) => {
@@ -106,8 +101,8 @@ function createAcc() {
 //////////////////////////////////////////////////////////////////////////////////
 auth.onAuthStateChanged((user) => {
     if (user) {
-        // setTeamsData();
         getTeamsData();
+        teamChanges();
         document.getElementById("loginPage").style.display = "none";
         document.getElementById("home").style.display = "block";
     } else {
@@ -115,17 +110,19 @@ auth.onAuthStateChanged((user) => {
         document.getElementById("home").style.display = "none";
     }
 });
-// const setTeamsData = () => {
-//     const databaseRef = database.ref(auth.currentUser.uid + "/teams/" + document.getElementById("teamName").
-//     value);
-//     databaseRef.on('value', (data) => {
-//         getTeamsData(data.val());
-//     });
-// };
-// document.getElementById("displayTeam").style.display="none";
-// function displayTeam(){
-//     document.getElementById("displayTeam").style.display="block";
-// }
+const saveChanges = () => {
+    document.getElementById("saveChanges").addEventListener("click", () => {
+        database.ref(auth.currentUser.uid + "/teams/" + document.getElementById("teamTitleArea").value).update({
+            teamName: document.getElementById("teamTitleArea").value,
+            ownerName: auth.currentUser.email,
+            teamMembers: document.getElementById("members").innerHTML,
+            teamQuestions: document.getElementById("questions").innerHTML
+        })
+        document.getElementById("createTeam").style.display = "block";
+        document.getElementById("ownedTeamsArea").style.display = "block";
+        document.getElementById("teamOwnerView").style.display = "none";
+    })
+}
 const getTeamsData = () => {
     database.ref(auth.currentUser.uid + "/teams/" + document.getElementById("teamName").value).on('child_added',
         (snapshot) => {
@@ -148,10 +145,50 @@ const getTeamsData = () => {
             document.getElementById("ownedTeamsArea").style.display = "block";
             pE.style.cursor = "pointer";
             pE.setAttribute('class', 'teamTitle');
-            
         });
 }
-
+const teamChanges = () => {
+    let memArray = [];
+    let allMemArray = [];
+    database.ref("users").on("child_added", (snapshot) => {
+        const data1 = snapshot.val();
+        data1.email;
+        memArray.push(data1.email);
+    })
+    console.log(memArray);
+    database.ref("allmembers").on("child_added", (snapshot) => {
+        const data2 = snapshot.val();
+        data2.Members;
+        allMemArray.push(data2.Members);
+    })
+    setTimeout(() => {
+        for (let i = 0; i < memArray.length; i++) {
+            for (let j = 0; j < allMemArray.length; j++) {
+                console.log(memArray[i] == allMemArray[j])
+                if (memArray[i] == allMemArray[j]&&memArray[i]!==auth.currentUser.email) {
+                    const divE0 = document.createElement("div");
+                    const divE = document.createElement("div");
+                    const imgE = document.createElement("img");
+                    imgE.src = "https://i.ibb.co/q7RvPS6/kisspng-teamwork-organization-logo-company-5c589d9ee12833-4922234015493113909223-removebg-preview.png";
+                    imgE.style.width = "200px";
+                    imgE.style.height = "200px"
+                    const pE = document.createElement("p");
+                    const pEtext = document.createTextNode('Team Alpha');
+                    pE.appendChild(pEtext);
+                    divE.appendChild(imgE);
+                    divE.appendChild(pE);
+                    divE0.appendChild(divE);
+                    divE0.classList.add("teamArea");
+                    document.getElementById("partOfTeamsArea").appendChild(divE0);
+                    document.getElementById("teamForm").style.display = 'none';
+                    document.getElementById("partOfTeamsArea").style.display = "block";
+                    pE.style.cursor = "pointer";
+                    pE.setAttribute('class', 'teamMemberTitle');
+                }
+            }
+        }
+    }, 2000)
+}
 const createTeam = () => {
     database.ref(auth.currentUser.uid + "/teams/" + document.getElementById("teamName").value).set({
         teamName: document.getElementById("teamName").value,
@@ -159,21 +196,9 @@ const createTeam = () => {
         teamQuestions: "",
         teamMembers: ""
     })
-    // const result = countString(document.getElementById("addMembers").value, "@");
-    // console.log(result);
     document.getElementById("teamForm").style.display = "none";
     document.getElementById("ownedTeamsArea").style.display = "block";
 }
-var teamName = document.getElementById("teamName").value;
-// function countString(str, letter) {
-//     let count = 0;
-//     for (let i = 0; i < str.length; i++) {
-//         if (str.charAt(i) == letter) {
-//             count += 1;
-//         }
-//     }
-//     return count;
-// }
 // function sendEmail() {
 //     const memName=document.getElementById("addMembers").value;
 //     const pass= randomStr
@@ -189,27 +214,25 @@ var teamName = document.getElementById("teamName").value;
 // 		message => alert("mail sent successfully")
 // 	);
 // }
-// function addAcc() {
-//     const email = document.getElementById("addMembers").value;
-//     const password = randomStr;
-//         auth.createUserWithEmailAndPassword(email, password)
-//             .then((userCredential) => {
-//                 var user = userCredential.user;
-//             })
-//             .catch((error) => {
-//                 var errorCode = error.code;
-//                 var errorMessage = error.message;
-//             });
-// }
 const addQuestions = () => {
     let questions = document.getElementById("questionArea").value;
     document.getElementById("questions").innerHTML += `Q) ${questions} <br> `;
-    document.getElementById("questionArea").value=null;
+    document.getElementById("questionArea").value = null;
 }
 const addMembers = () => {
+    const memArray = [];
     let members = document.getElementById("memberArea").value;
-    document.getElementById("members").innerHTML += ` ${members} `;
-    document.getElementById("memberArea").value=null;
+    memArray.push(members);
+    for (let i = 0; i < memArray.length; i++) {
+        document.getElementById("members").innerHTML += ` ${memArray[i]} `;
+    }
+    let Members = document.getElementById("memberArea").value;
+    database.ref("allmembers").push({
+        Members
+    }
+    )
+    document.getElementById("memberArea").value = null;
+
 }
 document.getElementById("teamOwnerView").style.display = "none";
 const teamOwnerViewShow = () => {
@@ -223,32 +246,9 @@ setTimeout(function () {
         teamTitleE[i].addEventListener("click", teamOwnerViewShow);
     }
 }, 2000);
-const saveChanges = () => {
-    document.getElementById("saveChanges").addEventListener("click", () => {
-        database.ref(auth.currentUser.uid + "/teams/" + document.getElementById("teamTitleArea").value).update({
-            teamName: document.getElementById("teamTitleArea").value,
-            ownerName: auth.currentUser.email,
-            teamMembers: document.getElementById("members").innerHTML,
-            teamQuestions: document.getElementById("questions").innerHTML
-        })
-        document.getElementById("createTeam").style.display = "block";
-        document.getElementById("ownedTeamsArea").style.display = "block";
-        document.getElementById("teamOwnerView").style.display = "none";
-    })
-}
-// setTimeout(()=>{
-//    window.onload = function() {
-// 	if(!window.location.hash) {
-// 		window.location = window.location + '#loaded';
-// 		window.location.reload();
-// 	}
-// }
-// },5000);
-// window.onload = function() {
-//     if(!window.location.hash) {
-//         window.location = window.location + '#loaded';
-//         window.location.reload();
-//     }
-// }
-
-
+setTimeout(function () {
+    teamTitleE = document.getElementsByClassName("teamMemberTitle");
+    for (let i = 0, len = teamTitleE.length; i < len; i++) {
+        teamTitleE[i].addEventListener("click", teamOwnerViewShow);
+    }
+}, 3000);
