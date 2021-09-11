@@ -102,6 +102,7 @@ function createAcc() {
 //////////////////////////////////////////////////////////////////////////////////
 auth.onAuthStateChanged((user) => {
     if (user) {
+        setData();
         getTeamsData();
         teamChanges();
         document.getElementById("loginPage").style.display = "none";
@@ -124,6 +125,14 @@ const saveChanges = () => {
         document.getElementById("teamOwnerView").style.display = "none";
         document.getElementById("partOfTeamsArea").style.display = "block";
     })
+}
+const setData=()=>{
+    database.ref(auth.currentUser.uid + "/teams/" + document.getElementById("teamName").value).on('child_added',
+        (snapshot) => {
+            const data = snapshot.val();
+            console.log(data.teamQuestions);
+            document.getElementById("qsToBeAns").innerHTML=data.teamQuestions;
+        })
 }
 const getTeamsData = () => {
     database.ref(auth.currentUser.uid + "/teams/" + document.getElementById("teamName").value).on('child_added',
@@ -201,22 +210,22 @@ const createTeam = () => {
     document.getElementById("teamForm").style.display = "none";
     document.getElementById("ownedTeamsArea").style.display = "block";
     document.getElementById("partOfTeamsArea").style.display = "block";
+    location.reload();
 }
-// function sendEmail() {
-//     const memName=document.getElementById("addMembers").value;
-//     const pass= randomStr
-// 	Email.send({
-// 	Host: "smtp.gmail.com",
-// 	Username : "saleemabdullah791@gmail.com",
-// 	Password : "abdullah1221",
-// 	To : memName,
-// 	From : "saleemabdullah791@gmail.com",
-// 	Subject : `${auth.currentUser.email} sends joining request`,
-// 	Body : `Joins ${auth.currentUser.email} team by using given credentials username: ${memName} and password: ${pass}`,
-// 	}).then(
-// 		message => alert("mail sent successfully")
-// 	);
-// }
+function sendEmail() {
+    const memName=document.getElementById("memberArea").value;
+	Email.send({
+	Host: "smtp.gmail.com",
+	Username : "saleemabdullah791@gmail.com",
+	Password : "abdullah1221",
+	To : memName,
+	From : "saleemabdullah791@gmail.com",
+	Subject : `${auth.currentUser.email} added You`,
+	Body : `Joins ${auth.currentUser.email} team by signingup with same email on which we have send you a mail.`,
+	}).then(
+		message => alert("mail sent successfully")
+	);
+}
 const addQuestions = () => {
     let questions = document.getElementById("questionArea").value;
     document.getElementById("questions").innerHTML += `Q) ${questions} <br> `;
@@ -225,6 +234,7 @@ const addQuestions = () => {
 const addMembers = () => {
     const memArray = [];
     let members = document.getElementById("memberArea").value;
+    sendEmail();
     memArray.push(members);
     for (let i = 0; i < memArray.length; i++) {
         document.getElementById("members").innerHTML += ` ${memArray[i]} `;

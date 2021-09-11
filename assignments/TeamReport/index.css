@@ -145,7 +145,7 @@ form>input{
     padding:20px 20px 20px 20px ;
     border-radius: 7px;
 }
-#questions,#members,#teamNameTitle{
+#questions,#members,#teamNameTitle,#qsToBeAns{
     background-color: #16914b4d;
     margin: 5px 5px 5px 7px;
     padding:20px 20px 20px 20px ;
