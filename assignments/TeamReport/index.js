@@ -126,12 +126,12 @@ const saveChanges = () => {
         document.getElementById("partOfTeamsArea").style.display = "block";
     })
 }
-const setData=()=>{
+const setData = () => {
     database.ref(auth.currentUser.uid + "/teams/" + document.getElementById("teamName").value).on('child_added',
         (snapshot) => {
             const data = snapshot.val();
             console.log(data.teamQuestions);
-            document.getElementById("qsToBeAns").innerHTML=data.teamQuestions;
+            document.getElementById("qsToBeAns").innerHTML = data.teamQuestions;
         })
 }
 const getTeamsData = () => {
@@ -161,47 +161,78 @@ const getTeamsData = () => {
 const teamChanges = () => {
     let memArray = [];
     let allMemArray = [];
-    database.ref("users").once("child_added", (snapshot) => {
+    database.ref("users").on("child_added", (snapshot) => {
         const data1 = snapshot.val();
         data1.email;
         memArray.push(data1.email);
     })
     console.log(memArray);
-    database.ref("allmembers").once("child_added", (snapshot) => {
+    database.ref("allmembers").on("child_added", (snapshot) => {
+        let teamArray = [];
         const data2 = snapshot.val();
         data2.Members;
+        teamArray.push(data2.teamName);
         allMemArray.push(data2.Members);
-    })
-    // location.reload();
-    setTimeout(() => {
-        for (let i = 0; i < memArray.length; i++) {
-            for (let j = 0; j < allMemArray.length; j++) {
-                console.log(memArray[i] == allMemArray[j])
-                if (memArray[i] == allMemArray[j]&&memArray[i]==auth.currentUser.email) {
-                    
-                    const divE0 = document.createElement("div");
-                    const divE = document.createElement("div");
-                    const imgE = document.createElement("img");
-                    imgE.src = "https://i.ibb.co/q7RvPS6/kisspng-teamwork-organization-logo-company-5c589d9ee12833-4922234015493113909223-removebg-preview.png";
-                    imgE.style.width = "200px";
-                    imgE.style.height = "200px"
-                    const pE = document.createElement("p");
-                    const pEtext = document.createTextNode('Team');
-                    pE.appendChild(pEtext);
-                    divE.appendChild(imgE);
-                    divE.appendChild(pE);
-                    divE0.appendChild(divE);
-                    divE0.classList.add("teamArea");
-                    document.getElementById("partOfTeamsArea").appendChild(divE0);
-                    document.getElementById("teamForm").style.display = 'none';
-                    document.getElementById("partOfTeamsArea").style.display = "block";
-                    pE.style.cursor = "pointer";
-                    pE.setAttribute('class', 'teamMemberTitle');
+        setTimeout(() => {
+            for (let i = 0; i < memArray.length; i++) {
+                for (let j = 0; j < allMemArray.length; j++) {
+                    if (memArray[i] == allMemArray[j] && memArray[i] == auth.currentUser.email) {
+                        const divE0 = document.createElement("div");
+                        const divE = document.createElement("div");
+                        const imgE = document.createElement("img");
+                        imgE.src = "https://i.ibb.co/q7RvPS6/kisspng-teamwork-organization-logo-company-5c589d9ee12833-4922234015493113909223-removebg-preview.png";
+                        imgE.style.width = "200px";
+                        imgE.style.height = "200px"
+                        const pE = document.createElement("p");
+                        const pEtext = document.createTextNode(teamArray);
+                        pE.appendChild(pEtext);
+                        divE.appendChild(imgE);
+                        divE.appendChild(pE);
+                        divE0.appendChild(divE);
+                        divE0.classList.add("teamArea");
+                        document.getElementById("partOfTeamsArea").appendChild(divE0);
+                        document.getElementById("teamForm").style.display = 'none';
+                        document.getElementById("partOfTeamsArea").style.display = "block";
+                        pE.style.cursor = "pointer";
+                        pE.setAttribute('class', 'teamMemberTitle');
+                        break;
+                    }
+                    break;
                 }
             }
-        }
-    }, 2000)
-    
+        }, 2000)
+
+    })
+    // location.reload();
+    // setTimeout(() => {
+    //     for (let i = 0; i < memArray.length; i++) {
+    //         for (let j = 0; j < allMemArray.length; j++) {
+    //             console.log(memArray[i] == allMemArray[j])
+    //             if (memArray[i] == allMemArray[j]&&memArray[i]==auth.currentUser.email) {
+
+    //                 const divE0 = document.createElement("div");
+    //                 const divE = document.createElement("div");
+    //                 const imgE = document.createElement("img");
+    //                 imgE.src = "https://i.ibb.co/q7RvPS6/kisspng-teamwork-organization-logo-company-5c589d9ee12833-4922234015493113909223-removebg-preview.png";
+    //                 imgE.style.width = "200px";
+    //                 imgE.style.height = "200px"
+    //                 const pE = document.createElement("p");
+    //                 const pEtext = document.createTextNode(teamArray);
+    //                 pE.appendChild(pEtext);
+    //                 divE.appendChild(imgE);
+    //                 divE.appendChild(pE);
+    //                 divE0.appendChild(divE);
+    //                 divE0.classList.add("teamArea");
+    //                 document.getElementById("partOfTeamsArea").appendChild(divE0);
+    //                 document.getElementById("teamForm").style.display = 'none';
+    //                 document.getElementById("partOfTeamsArea").style.display = "block";
+    //                 pE.style.cursor = "pointer";
+    //                 pE.setAttribute('class', 'teamMemberTitle');
+    //             }
+    //         }
+    //     }
+    // }, 2000)
+
 }
 const createTeam = () => {
     database.ref(auth.currentUser.uid + "/teams/" + document.getElementById("teamName").value).set({
@@ -216,19 +247,19 @@ const createTeam = () => {
     location.reload();
 }
 function sendEmail() {
-    const url="https://abdullah-saleem.github.io/assignments/TeamReport/index.html"
-    const memName=document.getElementById("memberArea").value;
-	Email.send({
-	Host: "smtp.gmail.com",
-	Username : "saleemabdullah791@gmail.com",
-	Password : "abdullah1221",
-	To : memName,
-	From : "saleemabdullah791@gmail.com",
-	Subject : `${auth.currentUser.email} added You`,
-	Body : `Joins ${auth.currentUser.email} team by signingup by clicking given link ${url} with same email on which we have send you a mail.`,
-	}).then(
-		message => alert("mail sent successfully")
-	);
+    const url = "https://abdullah-saleem.github.io/assignments/TeamReport/index.html"
+    const memName = document.getElementById("memberArea").value;
+    Email.send({
+        Host: "smtp.gmail.com",
+        Username: "saleemabdullah791@gmail.com",
+        Password: "abdullah1221",
+        To: memName,
+        From: "saleemabdullah791@gmail.com",
+        Subject: `${auth.currentUser.email} added You`,
+        Body: `Joins ${auth.currentUser.email} team by signingup by clicking given link  ${url}  with same email on which we have send you a mail.`,
+    }).then(
+        message => alert("mail sent successfully")
+    );
 }
 const addQuestions = () => {
     let questions = document.getElementById("questionArea").value;
@@ -244,7 +275,9 @@ const addMembers = () => {
         document.getElementById("members").innerHTML += ` ${memArray[i]} `;
     }
     let Members = document.getElementById("memberArea").value;
+    let teamName = document.getElementById("teamTitleArea").value;
     database.ref("allmembers").push({
+        teamName,
         Members
     }
     )
@@ -263,7 +296,7 @@ const memberViewShow = () => {
     document.getElementById("memberView").style.display = "block";
     document.getElementById("createTeam").style.display = "none";
     document.getElementById("ownedTeamsArea").style.display = "none";
-    document.getElementById("partOfTeamsArea").style.display = "none"; 
+    document.getElementById("partOfTeamsArea").style.display = "none";
 }
 setTimeout(function () {
     teamTitleE = document.getElementsByClassName("teamTitle");
