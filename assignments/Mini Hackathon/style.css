@@ -1,0 +1,274 @@
+.levels{
+    display: flex;
+    flex-wrap: wrap;
+    width: 40%;
+    position: absolute;
+    left: 35%;
+    transform: translate(-50,-50);
+}
+.ball1{
+    width: 10vw;
+    height: 10vw;
+    border-radius: 100%;
+    background-color: burlywood;
+    margin-bottom: 15px;
+    margin-right: 5px;
+}
+.goal1{
+    background-color: #0000FF;
+    width: 10vw;
+    height: 10vw;
+    border-radius: 100%;
+    color: blue;
+    margin-bottom: 15px;
+    margin-right: 5px;  
+}
+.lc{
+    display: flex;
+    justify-content: space-between;
+}
+.wrapper{
+    position: relative;
+}
+.goal2{
+    background-color: #FFFF00;
+    width: 10vw;
+    height: 10vw;
+    border-radius: 100%;
+    color: rgb(255, 255, 0);
+    margin-bottom: 15px;
+    margin-right: 5px;  
+}
+.ball2{
+    width: 10vw;
+    height: 10vw;
+    border-radius: 100%;
+    background-color: rgb(105, 64, 11);
+    margin-bottom: 15px;
+    margin-right: 5px;
+}
+.hide{
+    display: none;
+}
+.show{
+    display: block;
+}
+.level2{
+    display: flex;
+    flex-wrap: wrap;
+    width: 40%;
+    position: absolute;
+    left: 35%;
+    transform: translate(-50,-50);
+}
+.goal3{
+    background-color: rgb(255, 0, 0);
+    width: 10vw;
+    height: 10vw;
+    border-radius: 100%;
+    color: rgb(255, 0, 0);
+    margin-bottom: 15px;
+    margin-right: 5px;  
+}
+.ball3{
+    width: 10vw;
+    height: 10vw;
+    border-radius: 100%;
+    background-color: rgb(49, 105, 11);
+    margin-bottom: 15px;
+    margin-right: 5px;
+}
+.goal4{
+    background-color: rgb(255, 184, 196);
+    width: 10vw;
+    height: 10vw;
+    border-radius: 100%;
+    color: rgb(255, 184, 196);
+    margin-bottom: 15px;
+    margin-right: 5px;  
+}
+.ball4{
+    width: 10vw;
+    height: 10vw;
+    border-radius: 100%;
+    background-color: rgb(60, 158, 197);
+    margin-bottom: 15px;
+    margin-right: 5px;
+}
+.level3{
+    display: flex;
+    flex-wrap: wrap;
+    width: 40%;
+    position: absolute;
+    left: 35%;
+    transform: translate(-50,-50);
+}
+.level4{
+    display: flex;
+    flex-wrap: wrap;
+    width: 40%;
+    position: absolute;
+    left: 35%;
+    transform: translate(-50,-50);
+}
+.level5{
+    display: flex;
+    flex-wrap: wrap;
+    width: 40%;
+    position: absolute;
+    left: 35%;
+    transform: translate(-50,-50);
+}
+.goal5{
+    background-color:rgb(129, 0, 129);
+    width: 10vw;
+    height: 10vw;
+    border-radius: 100%;
+    color: rgb(129, 0, 129);
+    margin-bottom: 15px;
+    margin-right: 5px;  
+}
+.levels .ball1:nth-child(3){
+    background:#ff3300;
+    color: #ff3300;
+}
+.levels .ball1:nth-child(5){
+    background:#5c2c1f;
+    color: #ff3300;
+}
+.levels .ball2:nth-child(3){
+    background:#ff3300;
+    color: #ff3300;
+}
+.levels .ball2:nth-child(6){
+    background:#305c1f;
+    color: #ff3300;
+}
+.levels .ball2:nth-child(9){
+    background:#853d14;
+    color: #ff3300;
+}
+.levels .ball3:nth-child(3){
+    background:#ffc400;
+    color: #ff3300;
+}
+.levels .ball3:nth-child(6){
+    background:#1f5c45;
+    color: #ff3300;
+}
+.levels .ball3:nth-child(9){
+    background:#147485;
+    color: #ff3300;
+}
+.levels .ball4:nth-child(2){
+    background:#ffc400;
+    color: #ff3300;
+}
+.levels .ball4:nth-child(5){
+    background:#1f5c45;
+    color: #ff3300;
+}
+.levels .ball4:nth-child(8){
+    background:#147485;
+    color: #ff3300;
+}
+.levels .ball5:nth-child(1){
+    background:#ff0000;
+    color: #ff3300;
+}
+.levels .ball5:nth-child(5){
+    background:#d6660a;
+    color: #ff3300;
+}
+.levels .ball5:nth-child(8){
+    background:#0f6abe;
+    color: #ff3300;
+}
+.ball5{
+    width: 10vw;
+    height: 10vw;
+    border-radius: 100%;
+    background-color: rgb(8, 228, 144);
+    margin-bottom: 15px;
+    margin-right: 5px;
+}
+button{
+    position: absolute;
+    top: 100%;
+    background-color: #16914B;
+    color: #fff;
+    cursor: pointer;
+    height: 2.5rem;
+    width: 9.8rem;
+    font-weight: 550;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+#login_box{
+   position: absolute;
+   top: 25%;
+   right: 35%;
+   transform: translate(-50,-50);
+}
+body {
+    overflow-x: hidden;
+  }
+.logout{
+    height: 2.5rem;
+    width: 9.8rem;
+    border: none;
+    outline: none;
+    background-color: #16914B;
+    color: #000;
+    cursor: pointer;
+    font-weight: 550;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+@media only screen and (max-width: 600px) {
+    button{
+        top: 200%;
+    }
+    #login_box{
+        left: 5%;
+    }
+}
+/* .account{
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%,0%);
+}
+#signUp,#logIn{
+    height: 2.5rem;
+    width: 9.8rem;
+    border: none;
+    outline: none;
+    background-color: #16914B;
+    color: #000;
+    cursor: pointer;
+    font-weight: 550;
+    border-radius: 5px;
+}
+#loginbut,#signinbut,#createNow{
+    background-color: #16914B;
+    color: #000;
+    cursor: pointer;
+    width: 20rem;
+    font-weight: 550;
+    border-radius: 5px;
+}
+form>input{
+    height: 2.5rem;
+    width: 19.7rem;
+    border: 1px solid #16914B;
+    outline: none;
+    border-radius: 5px;
+} */
+input{
+    height: 2.5rem;
+    width: 19.7rem;
+    border: 1px solid #16914B;
+    border-radius: 5px;}

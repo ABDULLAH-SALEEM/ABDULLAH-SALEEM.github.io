@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script  src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script  src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script  src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="login_box">
+        Email: <br><input type="email" id="email" /><br><br>
+        Password: <br><input type="password" id="password" /><br><br>
+        <input type="button" onclick="login()" value="sign in" class="login" ><br><br>
+        <input type="button" onclick="signup()"  value="sign up" class="signup"><br>
+    </div>
+    <div id="wrapper">
+        <input type="button" onclick="logout()"  value="logout" class="logout">
+        <div class="lc">
+            <div id="life" style="font-weight: 550;">Life=5</div>
+            <h2 id="welcome"></h2>
+            <div id="score" style="font-weight: 550;">Score=0</div>
+        </div>
+        <div id="level" style="text-align: center;">Level 1</div>
+        <h1 style="text-align: center;">Pop the balloons by moving your mouse over them</h1>
+        <h1 id="head1" style="text-align: center;">Pop All Blue Balls</h1>
+        <div class="levels level1" id="level1">
+            <div class="goal1"></div>
+            <div class="goal1"></div>
+            <div class="ball1"></div>
+            <div class="goal1"></div>
+            <div class="ball1"></div>
+            <div class="goal1"></div>
+            <div class="ball1"></div>
+            <div class="goal1"></div>
+            <div class="ball1"></div>
+        </div>
+        <button onclick="update()" id="next1">Next</button>
+        <h1 id="head2" style="text-align: center;">Pop All Yellow Balls</h1>
+        <div class="levels level2" id="level2">
+            <div class="goal2"></div>
+            <div class="ball2"></div>
+            <div class="ball2"></div>
+            <div class="ball2"></div>
+            <div class="goal2"></div>
+            <div class="ball2"></div>
+            <div class="goal2"></div>
+            <div class="ball2"></div>
+            <div class="ball2"></div>
+        </div>
+        <button id="next2" onclick="update()">Next</button>
+        <h1 id="head3" style="text-align: center;">Pop All Red Balls</h1>
+        <div class="levels level3" id="level3">
+            <div class="goal3" id="goal3"></div>
+            <div class="ball3"></div>
+            <div class="ball3"></div>
+            <div class="ball3"></div>
+            <div class="goal3"></div>
+            <div class="ball3"></div>
+            <div class="goal3"></div>
+            <div class="ball3"></div>
+            <div class="ball3"></div>
+        </div>
+        <button id="next3" onclick="update()">Next</button>
+        <h1 id="head4" style="text-align: center;">Level 4<br>Pop All Pink Balls</h1>
+        <div class="levels level4" id="level4">
+            <div class="goal4"></div>
+            <div class="ball4"></div>
+            <div class="goal4"></div>
+            <div class="ball4"></div>
+            <div class="ball4"></div>
+            <div class="ball4"></div>
+            <div class="goal4"></div>
+            <div class="ball4"></div>
+            <div class="goal4"></div>
+        </div>
+        <button id="next4" onclick="update()">Next</button>
+        <h1 id="head5" style="text-align: center;">Pop All Purple Balls</h1>
+        <div class="levels level5" id="level5">
+            <div class="ball5"></div>
+            <div class="ball5"></div>
+            <div class="goal5"></div>
+            <div class="ball5"></div>
+            <div class="ball5"></div>
+            <div class="ball5"></div>
+            <div class="goal5"></div>
+            <div class="ball5"></div>
+            <div class="goal5"></div>
+        </div>
+        <div id="level6"></div>
+        <div id="level7"></div>
+        <div id="level8"></div>
+        <div id="level9"></div>
+        <div id="level10"></div>
+    </div>
+</body>
+<script src="app.js"></script>
+</html>
